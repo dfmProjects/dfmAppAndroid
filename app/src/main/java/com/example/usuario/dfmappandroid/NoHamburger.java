@@ -26,4 +26,6 @@ public class NoHamburger extends BaseActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }

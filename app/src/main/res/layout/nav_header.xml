@@ -1,11 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:text="Header"
-    android:padding="30dp"
-    android:background="?attr/colorAccent"
-    android:textColor="@android:color/white"/>
+    android:layout_height="180dp"
+    android:gravity="bottom"
+    android:background="@color/colorDfm"
+    android:orientation="vertical"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/navheader" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingTop="30dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageUser"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="3dp"
+            android:src="@mipmap/avatar" />
+
+        <TextView
+            android:id="@+id/nameUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:paddingTop="10dp"
+            android:text="Jose Manuel César Garcia"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/empresaUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="DISFRIMUR, S.L."
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</RelativeLayout>

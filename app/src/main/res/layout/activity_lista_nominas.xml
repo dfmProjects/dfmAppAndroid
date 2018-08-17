@@ -4,13 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/nominas_container"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".NoHamburger">
+    tools:context=".ListaNominas">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="I have a back button instead of the hamburger menu"/>
+        android:text="Nominas!"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/nominas_container2">
+
+    </RelativeLayout>
+
 </RelativeLayout>

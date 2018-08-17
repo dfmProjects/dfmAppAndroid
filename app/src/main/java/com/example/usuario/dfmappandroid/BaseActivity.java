@@ -127,6 +127,10 @@ public class BaseActivity extends AppCompatActivity implements
             case R.id.action_noToolbar :
                 startActivity(new Intent(this, NoToolbar.class));
                 return true;
+
+            case R.id.lista_nominas :
+                startActivity(new Intent(this, ListaNominas.class));
+                return true;
         }
 
         return super.onOptionsItemSelected(item);

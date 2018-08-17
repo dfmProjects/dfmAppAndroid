@@ -14,7 +14,22 @@
     tools:showIn="@layout/activity_main">
 
     <TextView
+        android:id="@+id/txtTexto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Main Activity!"/>
+
+
+    <Button
+        android:id="@+id/btnRequest"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="32dp"
+        android:layout_marginTop="350dp"
+        android:textSize="13sp"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:background="@drawable/button"
+        android:text="Consulta 1"
+        android:textColor="#ffffff" />
+
 </RelativeLayout>
