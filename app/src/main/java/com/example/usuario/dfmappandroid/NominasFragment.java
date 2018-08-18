@@ -15,7 +15,7 @@ import android.widget.ListView;
 public class NominasFragment extends Fragment {
 
     ListView mListaNominas;
-    ArrayAdapter<String> mListaNominasAdapter;
+    NominasAdapter mListaNominasAdapter;
 
     public NominasFragment() {
         // Required empty public constructor
@@ -43,23 +43,9 @@ public class NominasFragment extends Fragment {
 
         mListaNominas = (ListView) root.findViewById(R.id.nominas_list);
 
-        String[] leadsNames = {
-                "Alexander Pierrot",
-                "Carlos Lopez",
-                "Sara Bonz",
-                "Liliana Clarence",
-                "Benito Peralta",
-                "Juan Jaramillo",
-                "Christian Steps",
-                "Alexa Giraldo",
-                "Linda Murillo",
-                "Lizeth Astrada"
-        };
-
-        mListaNominasAdapter = new ArrayAdapter<>(
-                getActivity(),
-                android.R.layout.simple_list_item_1,
-                leadsNames);
+        // Inicializar el adaptador con la fuente de datos.
+        mListaNominasAdapter = new NominasAdapter(getActivity(),
+                Nomina_Repository.getInstance().getNomina());
 
 
         mListaNominas.setAdapter(mListaNominasAdapter);

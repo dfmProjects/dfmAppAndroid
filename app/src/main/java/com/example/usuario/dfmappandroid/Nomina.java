@@ -1,11 +1,23 @@
 package com.example.usuario.dfmappandroid;
 
+import android.media.Image;
+
 public class Nomina {
 
     private String nMes;
     private String nAnyo;
     private String nNomina;
     private String nId;
+    private int mImage;
+
+    public Nomina(String nId, String nMes, String nAnyo, String nNomina, int mImage) {
+        this.nId = nId;
+        this.nMes = nMes;
+        this.nAnyo = nAnyo;
+        this.nNomina = nNomina;
+        this.mImage = mImage;
+
+    }
 
     public String getnId() {
         return nId;
@@ -15,11 +27,12 @@ public class Nomina {
         this.nId = nId;
     }
 
-    public Nomina(String nId, String nMes, String nAnyo, String nNomina) {
-        this.nId = nId;
-        this.nMes = nMes;
-        this.nAnyo = nAnyo;
-        this.nNomina = nNomina;
+    public int getmImage() {
+        return mImage;
+    }
+
+    public void setmImage(int mImage) {
+        this.mImage = mImage;
     }
 
     public String getnMes() {
