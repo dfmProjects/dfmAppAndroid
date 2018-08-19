@@ -1,4 +1,7 @@
-package com.example.usuario.dfmappandroid;
+package com.example.usuario.dfmappandroid.Utils;
+
+import com.example.usuario.dfmappandroid.Objects.Nomina;
+import com.example.usuario.dfmappandroid.R;
 
 import java.util.*;
 
@@ -14,7 +17,7 @@ public class Nomina_Repository {
 
     private Nomina_Repository() {
 
-        saveNomina(new Nomina("Carlos Ruiz", "Asistente", "Hospital Blue", "Nomina",R.drawable.ic_feb));
+        saveNomina(new Nomina("Carlos Ruiz", "Asistente", "Hospital Blue", "Nomina", R.drawable.ic_feb));
         saveNomina(new Nomina("Carlos Lopez", "Asistente", "Hospital Blue", "Nomina",R.drawable.ic_feb));
         saveNomina(new Nomina("Carlos Alfonso", "Asistente", "Hospital Blue", "Nomina",R.drawable.ic_feb));
     }

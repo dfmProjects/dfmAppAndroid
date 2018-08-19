@@ -1,4 +1,4 @@
-package com.example.usuario.dfmappandroid;
+package com.example.usuario.dfmappandroid.Activitys;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -21,14 +21,17 @@ import com.android.volley.toolbox.BasicNetwork;
 import com.android.volley.toolbox.DiskBasedCache;
 import com.android.volley.toolbox.HurlStack;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.example.usuario.dfmappandroid.Utils.Constantes;
+import com.example.usuario.dfmappandroid.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import com.example.usuario.dfmappandroid.Utils.Constantes;
 
 public class MainActivity extends BaseActivity {
 
-
+    private static String TAG = "MainActivity";
     Button btnRequest;
     Button btnRequest2;
     TextView texto;
@@ -55,7 +58,7 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick (View v){
                 //Add params
-                endPoint = Constantes.webService + "?NumModelo=209";
+                endPoint = Constantes.getWebService() + "?NumModelo=209";
 
                 JsonArrayRequest stringRequest = new JsonArrayRequest(Request.Method.GET, endPoint, null, new Response.Listener<JSONArray>() {
                     @Override
@@ -81,7 +84,7 @@ public class MainActivity extends BaseActivity {
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Log.i(Constantes.TAG,"Error :" + error.toString());
+                        Log.i(TAG,"Error :" + error.toString());
                     }
                 });
 

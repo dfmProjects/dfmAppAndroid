@@ -1,23 +1,18 @@
-package com.example.usuario.dfmappandroid;
+package com.example.usuario.dfmappandroid.Adapters;
 
 import java.util.*;
-import android.app.LauncherActivity;
+
 import android.content.Context;
-import android.graphics.Movie;
-import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+import com.example.usuario.dfmappandroid.Objects.Nomina;
+import com.example.usuario.dfmappandroid.R;
 
 public class NominasAdapter extends ArrayAdapter<Nomina>{
 

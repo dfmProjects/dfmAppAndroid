@@ -1,4 +1,4 @@
-package com.example.usuario.dfmappandroid;
+package com.example.usuario.dfmappandroid.Fragments;
 
 
 import android.os.Bundle;
@@ -6,8 +6,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.example.usuario.dfmappandroid.Utils.Nomina_Repository;
+import com.example.usuario.dfmappandroid.Adapters.NominasAdapter;
+import com.example.usuario.dfmappandroid.R;
 
 /*
  * Vista para las nóminas

@@ -1,7 +1,9 @@
-package com.example.usuario.dfmappandroid;
+package com.example.usuario.dfmappandroid.Activitys;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+
+import com.example.usuario.dfmappandroid.R;
 
 public class NoHamburger extends BaseActivity {
 

@@ -17,6 +17,11 @@
             android:title="Lista"/>
 
         <item
+            android:id="@+id/lista_sql"
+            android:icon="@android:drawable/ic_btn_speak_now"
+            android:title="Lista Web Service"/>
+
+        <item
             android:id="@+id/action_noHamburger"
             android:icon="@android:drawable/ic_btn_speak_now"
             android:title="No Hamburger"/>

@@ -4,4 +4,6 @@
     <string name="title_activity_base">BaseActivity</string>
     <string name="nav_drawer_opened">drawer opened</string>
     <string name="nav_drawer_closed">drawer closed</string>
+    <string name="title_activity_lista_from_sql">ListaFromSql</string>
+    <string name="title_activity_fetch">FetchActivity</string>
 </resources>

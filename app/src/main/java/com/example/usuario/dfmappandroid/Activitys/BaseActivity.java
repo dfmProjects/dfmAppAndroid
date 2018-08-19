@@ -1,4 +1,4 @@
-package com.example.usuario.dfmappandroid;
+package com.example.usuario.dfmappandroid.Activitys;
 
 import android.content.Intent;
 import android.support.annotation.LayoutRes;
@@ -11,6 +11,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+
+import com.example.usuario.dfmappandroid.R;
 
 public class BaseActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
@@ -130,6 +132,10 @@ public class BaseActivity extends AppCompatActivity implements
 
             case R.id.lista_nominas :
                 startActivity(new Intent(this, ListaNominas.class));
+                return true;
+
+            case R.id.lista_sql :
+                startActivity(new Intent(this, ListaSql.class));
                 return true;
         }
 
