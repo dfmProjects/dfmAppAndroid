@@ -81,7 +81,7 @@ public class BaseActivity extends AppCompatActivity implements
             // Use home/back button instead
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setHomeAsUpIndicator(getResources()
-                    .getDrawable(R.drawable.abc_ic_ab_back_mtrl_am_alpha));
+                    .getDrawable(R.drawable.abc_ic_ab_back_material));
         }
     }
 
@@ -136,6 +136,10 @@ public class BaseActivity extends AppCompatActivity implements
 
             case R.id.lista_sql :
                 startActivity(new Intent(this, ListaSql.class));
+                return true;
+
+            case R.id.lista_alternativa :
+                startActivity(new Intent(this, ListMockio.class));
                 return true;
         }
 

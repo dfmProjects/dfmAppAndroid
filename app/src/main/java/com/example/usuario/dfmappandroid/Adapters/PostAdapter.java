@@ -22,6 +22,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.usuario.dfmappandroid.Objects.Post;
 import com.example.usuario.dfmappandroid.R;
+import com.example.usuario.dfmappandroid.Utils.Constantes;
 
 
 import org.json.JSONArray;
@@ -54,7 +55,7 @@ import java.util.Iterator;
             // Nueva petición JSONObject
             jsArrayRequest = new JsonArrayRequest (
                     Request.Method.GET,
-                    "http://web3.disfrimur.com:8060/wsdl/REST/service.php?NumModelo=1",
+                    Constantes.getWebService() + "?NumModelo=209",
                     null,
                     new Response.Listener<JSONArray >() {
                         @Override
@@ -63,7 +64,7 @@ import java.util.Iterator;
 
                             List<Post> posts = new ArrayList<>();
                             JSONArray jsonArray= null;
-                            Toast.makeText(getContext(), response.toString(), Toast.LENGTH_LONG).show();
+
 
                             Log.d("Response", response.toString());
                             // Parsing json
@@ -71,18 +72,19 @@ import java.util.Iterator;
                                 try {
 
                                     JSONObject obj = response.getJSONObject(i);
-                                    String nickname =
-                                            obj.getString("Descripcion");
-                                    Log.d("Descripcion",nickname);
+                                    //String nickname =obj.getString("Nomina");
+                                    //Log.d("Descripcion",nickname);
                                     Post post = new Post(
-                                            obj.getString("Descripcion"),
-                                            obj.getString("first_name"),
-                                            obj.getString("last_name"));
+                                            obj.getString("NumTipo"),
+                                            obj.getString("Denominacion"),
+                                            obj.getString("NumModelo"));
 
 
 
 
                                     posts.add(post);
+
+                                    Toast.makeText(getContext(), posts.toString(), Toast.LENGTH_LONG).show();
 
                                 } catch (JSONException e) {
                                     e.printStackTrace();
@@ -97,6 +99,7 @@ import java.util.Iterator;
                     new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
+                            Log.i(TAG, "Error Respuesta en JSON: " + error.getMessage());
                             Log.d(TAG, "Error Respuesta en JSON: " + error.getMessage());
                             Toast.makeText(getContext(), "Error en JSON: no se puede covertir JSONObject a JSONArray", Toast.LENGTH_SHORT).show();
 
@@ -131,6 +134,8 @@ import java.util.Iterator;
             // Obtener el item actual
             Post item = items.get(position);
 
+            Toast.makeText(getContext(), item.getDescripcion(), Toast.LENGTH_LONG).show();
+
             // Obtener Views
             TextView textoTitulo = (TextView) listItemView.
                     findViewById(R.id.textoTitulo);
@@ -142,7 +147,7 @@ import java.util.Iterator;
             // Actualizar los Views
             textoTitulo.setText(item.getTitulo());
             textoDescripcion.setText(item.getDescripcion());
-
+/*
             // Petición para obtener la imagen
             ImageRequest request = new ImageRequest(
                     URL_BASE + item.getImagen(),
@@ -161,6 +166,7 @@ import java.util.Iterator;
 
             // Añadir petición a la cola
             requestQueue.add(request);
+            */
 
 
             return listItemView;
@@ -171,12 +177,12 @@ import java.util.Iterator;
 
 
             List<Post> posts = new ArrayList<>();
-            JSONArray jsonArray= null;
+            //JSONArray jsonArray = jsonObject.getJSONArray();
 
 
             try {
                 // Obtener el array del objeto
-                jsonArray = jsonObject.getJSONArray("nomina");
+                JSONArray jsonArray = jsonObject.getJSONArray("nomina");
 
                 for(int i=0; i<jsonArray.length(); i++){
 

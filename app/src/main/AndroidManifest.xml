@@ -48,7 +48,8 @@
             android:name=".Activitys.FetchActivity"
             android:label="@string/title_activity_fetch"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Activitys.ListaSql"></activity>
+        <activity android:name=".Activitys.ListaSql" />
+        <activity android:name=".Activitys.ListMockio"></activity>
     </application>
 
 </manifest>
