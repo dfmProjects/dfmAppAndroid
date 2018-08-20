@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.usuario.dfmappandroid.Objects.Movie;
 import com.example.usuario.dfmappandroid.R;
@@ -41,6 +42,9 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
 
     @Override
     public int getItemCount() {
+
+        Toast.makeText(this.context.getApplicationContext(), "Respuesta: " + list.toString(), Toast.LENGTH_SHORT).show();
+
         return list.size();
     }
 

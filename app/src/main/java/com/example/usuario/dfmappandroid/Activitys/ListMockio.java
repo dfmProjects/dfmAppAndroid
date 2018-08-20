@@ -57,7 +57,7 @@ public class ListMockio extends AppCompatActivity {
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         dividerItemDecoration = new DividerItemDecoration(mList.getContext(), linearLayoutManager.getOrientation());
 
-        mList.setHasFixedSize(true);
+        //mList.setHasFixedSize(true);
         mList.setLayoutManager(linearLayoutManager);
         mList.addItemDecoration(dividerItemDecoration);
         mList.setAdapter(adapter);
@@ -84,7 +84,7 @@ public class ListMockio extends AppCompatActivity {
                         movie.setRating(jsonObject.getInt("rating"));
                         movie.setYear(jsonObject.getInt("releaseYear"));
 
-                        Toast.makeText(getApplicationContext(), "Respuesta " + jsonObject.getString("title"), Toast.LENGTH_SHORT).show();
+                       // Toast.makeText(getApplicationContext(), "Respuesta " + jsonObject.getString("title"), Toast.LENGTH_SHORT).show();
 
 
                         movieList.add(movie);
