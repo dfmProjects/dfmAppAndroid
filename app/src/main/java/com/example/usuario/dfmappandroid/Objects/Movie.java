@@ -2,15 +2,12 @@ package com.example.usuario.dfmappandroid.Objects;
 
 public class Movie {
 
-    public String title;
-    public int rating;
-    public int year;
-
+    public String title, rating, year;
     public Movie() {
 
     }
 
-    public Movie(String title, int rating, int year) {
+    public Movie(String title, String rating, String year) {
         this.title = title;
         this.rating = rating;
         this.year = year;
@@ -24,19 +21,19 @@ public class Movie {
         this.title = title;
     }
 
-    public int getRating() {
+    public String getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(String rating) {
         this.rating = rating;
     }
 
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(String year) {
         this.year = year;
     }
 }

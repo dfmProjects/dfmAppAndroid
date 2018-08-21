@@ -39,8 +39,8 @@ public class ListMockio extends AppCompatActivity {
     private RecyclerView.Adapter adapter;
 
     //private String url = "http://www.mocky.io/v2/5b7aefc334000075008ed7a2";
-    private String url = "http://www.mocky.io/v2/5b7af6c73400005f008ed7b2"; // LisT varios
-    //private String url = "http://web3.disfrimur.com:8060/wsdl/REST/service.php?NumModelo=209";
+    //private String url = "http://www.mocky.io/v2/5b7af6c73400005f008ed7b2"; // LisT varios
+    private String url = "http://web3.disfrimur.com:8060/wsdl/REST/service.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,9 +62,8 @@ public class ListMockio extends AppCompatActivity {
         mList.addItemDecoration(dividerItemDecoration);
         mList.setAdapter(adapter);
 
-
+        // Call to web Service
         getData();
-
     }
 
     private void getData() {
@@ -80,12 +79,9 @@ public class ListMockio extends AppCompatActivity {
                         JSONObject jsonObject = response.getJSONObject(i);
 
                         Movie movie = new Movie();
-                        movie.setTitle(jsonObject.getString("title"));
-                        movie.setRating(jsonObject.getInt("rating"));
-                        movie.setYear(jsonObject.getInt("releaseYear"));
-
-                        Toast.makeText(getApplicationContext(), "Respuesta " + jsonObject.getString("title"), Toast.LENGTH_SHORT).show();
-
+                        movie.setTitle(jsonObject.getString("NumTipo"));
+                        movie.setRating(jsonObject.getString("Denominacion"));
+                        movie.setYear(jsonObject.getString("NumModelo"));
 
                         movieList.add(movie);
                     } catch (JSONException e) {
