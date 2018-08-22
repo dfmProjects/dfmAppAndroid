@@ -2,38 +2,56 @@ package com.example.usuario.dfmappandroid.Objects;
 
 public class Movie {
 
-    public String title, rating, year;
+    public String empresa, nombre, dpto, delegacion, doc;
     public Movie() {
 
     }
 
-    public Movie(String title, String rating, String year) {
-        this.title = title;
-        this.rating = rating;
-        this.year = year;
+    public Movie(String empresa, String nombre, String dpto, String delegacion, String doc) {
+        this.empresa = empresa;
+        this.nombre = nombre;
+        this.dpto = dpto;
+        this.delegacion = delegacion;
+        this.doc = doc;
     }
 
-    public String getTitle() {
-        return title;
+    public String getDoc() {
+        return doc;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setDoc(String doc) {
+        this.doc = doc;
     }
 
-    public String getRating() {
-        return rating;
+    public String getEmpresa() {
+        return empresa;
     }
 
-    public void setRating(String rating) {
-        this.rating = rating;
+    public void setEmpresa(String empresa) {
+        this.empresa = empresa;
     }
 
-    public String getYear() {
-        return year;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setYear(String year) {
-        this.year = year;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDpto() {
+        return dpto;
+    }
+
+    public void setDpto(String dpto) {
+        this.dpto = dpto;
+    }
+
+    public String getDelegacion() {
+        return delegacion;
+    }
+
+    public void setDelegacion(String delegacion) {
+        this.delegacion = delegacion;
     }
 }

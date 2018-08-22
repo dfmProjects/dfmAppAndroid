@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.usuario.dfmappandroid.Objects.Movie;
 import com.example.usuario.dfmappandroid.R;
@@ -34,29 +33,26 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
 
         Movie movie = list.get(position);
 
-        holder.textTitle.setText(movie.getTitle());
-        holder.textRating.setText(String.valueOf(movie.getRating()));
-        holder.textYear.setText(String.valueOf(movie.getYear()));
+        holder.textEmpresa.setText(movie.getEmpresa());
+        holder.textDpto.setText(String.valueOf(movie.getDpto()));
+        holder.textDelegacion.setText(String.valueOf(movie.getDelegacion()));
+        holder.textNombre.setText(String.valueOf(movie.getNombre()));
 
     }
 
     @Override
-    public int getItemCount() {
-
-        Toast.makeText(this.context.getApplicationContext(), "Respuesta: " + list.toString(), Toast.LENGTH_SHORT).show();
-
-        return list.size();
-    }
+    public int getItemCount() {return list.size();}
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView textTitle, textRating, textYear;
+        public TextView textEmpresa, textDpto, textDelegacion, textNombre;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
-            textTitle = (TextView) itemView.findViewById(R.id.main_title);
-            textRating = (TextView) itemView.findViewById(R.id.main_rating);
-            textYear = (TextView) itemView.findViewById(R.id.main_year);
+            textEmpresa = (TextView) itemView.findViewById(R.id.main_empresa);
+            textDpto = (TextView) itemView.findViewById(R.id.main_dpto);
+            textDelegacion = (TextView) itemView.findViewById(R.id.main_delegacion);
+            textNombre = (TextView) itemView.findViewById(R.id.main_nombre);
         }
     }
 
