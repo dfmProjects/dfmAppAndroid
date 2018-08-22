@@ -78,7 +78,7 @@ public class ListMockio extends AppCompatActivity {
                     @Override public void onItemClick(View view, int position) {
                         // do whatever
 
-                        //Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://web3.disfrimur.com:8061/empleo/" + movieList.get( position).getDoc().toString()));
+                        //Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://web3.disfrimur.com:8061/empleo/" + movieList.get( position).getDoc().toString()));;
                         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://web3.disfrimur.com:8061/empleo/Pedro-Duque-9928328238.pdf"));
                         startActivity(browserIntent);
 
