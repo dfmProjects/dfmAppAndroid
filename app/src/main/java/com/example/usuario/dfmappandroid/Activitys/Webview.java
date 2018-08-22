@@ -119,7 +119,7 @@ public class Webview extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            progressDialog.setMessage("Descargando...");
+            progressDialog.setMessage("Descargando....");
             progressDialog.show();
         }
 
