@@ -77,10 +77,14 @@ public class ListMockio extends AppCompatActivity {
                 new RecyclerItemClickListener(getApplicationContext(), mList ,new RecyclerItemClickListener.OnItemClickListener() {
                     @Override public void onItemClick(View view, int position) {
                         // do whatever
+                        Intent intent = new Intent(getBaseContext(), Webview.class);
+                        intent.putExtra("URL_TO_PDF", movieList.get( position).getDoc().toString());
+                        startActivity(intent);
+
 
                         //Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://web3.disfrimur.com:8061/empleo/" + movieList.get( position).getDoc().toString()));;
-                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://web3.disfrimur.com:8061/empleo/Pedro-Duque-9928328238.pdf"));
-                        startActivity(browserIntent);
+                        //Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://web3.disfrimur.com:8061/empleo/Pedro-Duque-9928328238.pdf"));
+                        //startActivity(browserIntent);
 
 
                     }
