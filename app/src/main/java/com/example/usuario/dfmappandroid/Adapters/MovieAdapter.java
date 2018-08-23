@@ -43,7 +43,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
     @Override
     public int getItemCount() {return list.size();}
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         public TextView textEmpresa, textDpto, textDelegacion, textNombre;
 
         public ViewHolder(View itemView) {
@@ -53,6 +53,12 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             textDpto = (TextView) itemView.findViewById(R.id.main_dpto);
             textDelegacion = (TextView) itemView.findViewById(R.id.main_delegacion);
             textNombre = (TextView) itemView.findViewById(R.id.main_nombre);
+        }
+
+        @Override
+        public void onClick(View view) {
+
+
         }
     }
 

@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -46,7 +47,9 @@ public class ListMockio extends AppCompatActivity {
     //private String url = "http://www.mocky.io/v2/5b7aefc334000075008ed7a2";
     //private String url = "http://www.mocky.io/v2/5b7af6c73400005f008ed7b2"; // LisT varios
     private String url = "http://web3.disfrimur.com:8060/wsdl/REST/service.php";
-    private String id = "?id=29";
+    private String id = "?id=32";
+
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +71,8 @@ public class ListMockio extends AppCompatActivity {
         mList.addItemDecoration(dividerItemDecoration);
         mList.setAdapter(adapter);
 
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+
         // Call to web Service
         getData();
 
@@ -77,10 +82,6 @@ public class ListMockio extends AppCompatActivity {
                 new RecyclerItemClickListener(getApplicationContext(), mList ,new RecyclerItemClickListener.OnItemClickListener() {
                     @Override public void onItemClick(View view, int position) {
                         // do whatever
-                        Intent intent = new Intent(getBaseContext(), Webview.class);
-                        intent.putExtra("URL_TO_PDF", movieList.get( position).getDoc().toString());
-                        startActivity(intent);
-
 
                         //Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://web3.disfrimur.com:8061/empleo/" + movieList.get( position).getDoc().toString()));;
                         //Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://web3.disfrimur.com:8061/empleo/Pedro-Duque-9928328238.pdf"));
@@ -100,9 +101,9 @@ public class ListMockio extends AppCompatActivity {
     }
 
     private void getData() {
-        final ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Loading...");
-        progressDialog.show();
+
+
+
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url+id, new Response.Listener<JSONArray>() {
             @Override
@@ -121,16 +122,16 @@ public class ListMockio extends AppCompatActivity {
                         movieList.add(movie);
                     } catch (JSONException e) {
                         e.printStackTrace();
-                        progressDialog.dismiss();
+                        progressBar.setVisibility(View.GONE);
                     }
                 adapter.notifyDataSetChanged();
-                progressDialog.dismiss();
+                progressBar.setVisibility(View.GONE);
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.e("Volley", error.toString());
-                progressDialog.dismiss();
+                progressBar.setVisibility(View.GONE);
             }
         });
         RequestQueue requestQueue = Volley.newRequestQueue(this);

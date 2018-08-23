@@ -84,7 +84,7 @@ import java.util.Iterator;
 
                                     posts.add(post);
 
-                                    Toast.makeText(getContext(), posts.toString(), Toast.LENGTH_LONG).show();
+
 
                                 } catch (JSONException e) {
                                     e.printStackTrace();
