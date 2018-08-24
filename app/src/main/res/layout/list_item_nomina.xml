@@ -43,4 +43,6 @@
         android:layout_below="@+id/tv_title"
         android:text="Compañía"
         tools:text="Blue Insurances Ltd" />
+
+
 </RelativeLayout>

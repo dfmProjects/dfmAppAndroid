@@ -12,7 +12,10 @@ import java.net.URL;
 public class FileDownloader {
     private static final int  MEGABYTE = 1024 * 1024;
 
-    public static void downloadFile(String fileUrl, File directory){
+    public static boolean downloadFile(String fileUrl, File directory){
+
+        boolean download = true;
+
         try {
 
             URL url = new URL(fileUrl);
@@ -33,10 +36,14 @@ public class FileDownloader {
             fileOutputStream.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+            download = false;
         } catch (MalformedURLException e) {
             e.printStackTrace();
+            download = false;
         } catch (IOException e) {
             e.printStackTrace();
+            download = false;
         }
+        return download;
     }
 }

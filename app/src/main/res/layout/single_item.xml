@@ -1,33 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:padding="10dp">
+
+
+    <ImageView
+        android:id="@+id/img_item_list"
+        android:layout_width="30dp"
+        android:layout_height="35dp"
+        android:layout_centerVertical="true"
+        android:layout_gravity="left"
+        android:src="@drawable/ic_feb" />
 
     <TextView
         android:id="@+id/main_nombre"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rating"/>
+        android:layout_centerInParent="false"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="35dp"
+        android:text="Nombre"
+        android:textAppearance="?attr/textAppearanceListItem" />
 
     <TextView
         android:id="@+id/main_empresa"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Title"
-        android:textSize="18sp"/>
-
+        android:layout_alignLeft="@+id/tv_name"
+        android:layout_below="@+id/tv_name"
+        android:text="Cargo"
+        android:visibility="gone"/>
 
     <TextView
         android:id="@+id/main_dpto"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rating"/>
+        android:layout_alignLeft="@+id/tv_name"
+        android:layout_below="@+id/tv_title"
+        android:text="Compañía"
+        android:visibility="gone"/>
 
     <TextView
         android:id="@+id/main_delegacion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Year"/>
-</LinearLayout>
+        android:text="Year"
+        android:visibility="gone"/>
+
+
+    <Button
+        android:id="@+id/btn_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:text="descargar" />
+
+
+
+
+
+</RelativeLayout>

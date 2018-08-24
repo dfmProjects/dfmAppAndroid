@@ -6,4 +6,5 @@
     <string name="nav_drawer_closed">drawer closed</string>
     <string name="title_activity_lista_from_sql">ListaFromSql</string>
     <string name="title_activity_fetch">FetchActivity</string>
+    <string name="descargando">Descargando...</string>
 </resources>

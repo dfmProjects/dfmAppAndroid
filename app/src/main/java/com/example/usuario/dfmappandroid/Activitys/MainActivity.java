@@ -1,7 +1,11 @@
 package com.example.usuario.dfmappandroid.Activitys;
 
+import android.Manifest;
+import android.app.Activity;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
 import android.view.Menu;
@@ -31,6 +35,13 @@ import com.example.usuario.dfmappandroid.Utils.Constantes;
 
 public class MainActivity extends BaseActivity {
 
+
+    private static final int REQUEST_EXTERNAL_STORAGE = 1;
+    private static String[] PERMISSIONS_STORAGE = {
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE
+    };
+
     private static String TAG = "MainActivity";
     Button btnRequest;
     Button btnRequest2;
@@ -46,6 +57,13 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        //Permisos de la aplicación
+        MainActivity.verifyStoragePermissions(this);
+
+
+
 
         btnRequest = (Button) findViewById(R.id.btnRequest);
         texto = (TextView) findViewById(R.id.txtTexto);
@@ -119,5 +137,19 @@ public class MainActivity extends BaseActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public static void verifyStoragePermissions(Activity activity) {
+        // Check if we have write permission
+
+        int permission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+
+        if (permission != PackageManager.PERMISSION_GRANTED) {
+            // We don't have permission so prompt the user
+            ActivityCompat.requestPermissions(
+                    activity, PERMISSIONS_STORAGE,REQUEST_EXTERNAL_STORAGE );
+
+        }
+
     }
 }
