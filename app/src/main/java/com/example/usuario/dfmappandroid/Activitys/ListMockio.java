@@ -48,7 +48,7 @@ import com.example.usuario.dfmappandroid.Utils.RecyclerItemClickListener;
 
 import java.util.List;
 
-public class ListMockio extends AppCompatActivity {
+public class ListMockio extends BaseActivity {
 
     //url de example : https://medium.com/android-grid/how-to-fetch-json-data-using-volley-and-put-it-to-recyclerview-android-studio-383059a12d1e
 
@@ -76,6 +76,8 @@ public class ListMockio extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_mockio);
 
+
+        getSupportActionBar().setTitle("NÓMINAS");
 
         context = this;
         mList = (RecyclerView) findViewById(R.id.main_list);
@@ -168,10 +170,7 @@ public class ListMockio extends AppCompatActivity {
         return true;
     }
 
-    public void download(View v)
-    {
-        //new Webview.DownloadFile().execute("http://maven.apache.org/maven-1.x/maven.pdf", "maven.pdf");
-    }
+
 
     public void view(String filename)
     {

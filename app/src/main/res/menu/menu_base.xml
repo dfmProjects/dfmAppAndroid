@@ -4,8 +4,8 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/action_main"
-            android:icon="@android:drawable/ic_btn_speak_now"
-            android:title="Main Activity"/>
+            android:icon="@drawable/ic_house"
+            android:title="Main Activity" />
         <item
             android:id="@+id/action_other"
             android:icon="@android:drawable/ic_btn_speak_now"
@@ -13,17 +13,8 @@
 
         <item
             android:id="@+id/lista_nominas"
-            android:icon="@android:drawable/ic_btn_speak_now"
-            android:title="Lista"/>
-
-        <item
-            android:id="@+id/lista_sql"
-            android:icon="@android:drawable/ic_btn_speak_now"
-            android:title="Lista Web Service"/>
-        <item
-            android:id="@+id/lista_alternativa"
-            android:icon="@android:drawable/ic_btn_speak_now"
-            android:title="Lista Web Service Mockio"/>
+            android:icon="@drawable/ic_nominas"
+            android:title="Nóminas"/>
 
         <item
             android:id="@+id/action_noHamburger"
@@ -32,20 +23,15 @@
     </group>
     <item
         android:id="@+id/navigation_subheader"
-        android:title="Otras opciones">
+        android:title="Configración">
         <menu>
-            <item
-                android:id="@+id/action_noToolbar"
-                android:icon="@android:drawable/ic_btn_speak_now"
-                android:title="No Toolbar"/>
+
             <item
                 android:id="@+id/ic_share"
-                android:icon="@android:drawable/ic_btn_speak_now"
+                android:icon="@drawable/ic_settings"
                 android:title="Opcion 2"/>
         </menu>
     </item>
 
-    <item
-        android:icon="@mipmap/ic_settings"
-        android:title="Ajustes"/>
+
 </menu>

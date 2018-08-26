@@ -122,23 +122,7 @@ public class BaseActivity extends AppCompatActivity implements
                 startActivity(new Intent(this, OtherActivity.class));
                 return true;
 
-            case R.id.action_noHamburger :
-                startActivity(new Intent(this, NoHamburger.class));
-                return true;
-
-            case R.id.action_noToolbar :
-                startActivity(new Intent(this, NoToolbar.class));
-                return true;
-
             case R.id.lista_nominas :
-                startActivity(new Intent(this, ListaNominas.class));
-                return true;
-
-            case R.id.lista_sql :
-                startActivity(new Intent(this, ListaSql.class));
-                return true;
-
-            case R.id.lista_alternativa :
                 startActivity(new Intent(this, ListMockio.class));
                 return true;
         }

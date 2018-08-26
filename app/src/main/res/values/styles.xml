@@ -10,8 +10,8 @@
 
     <style name="AppTheme.MyDrawerStyle">
         <!-- Estilo para el menu lateral. -->
-        <item name="android:textSize">14sp</item>
-        <item name="android:textColorPrimary">@color/colorDefautlt</item>
+        <item name="android:textSize">16dp</item>
+
     </style>
 
 
