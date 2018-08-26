@@ -1,16 +1,11 @@
 package com.example.usuario.dfmappandroid.Activitys;
 
-import android.Manifest;
-import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Environment;
-import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
@@ -19,10 +14,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.webkit.WebView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -30,6 +22,12 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.usuario.dfmappandroid.Adapters.MovieAdapter;
+import com.example.usuario.dfmappandroid.Objects.Movie;
+import com.example.usuario.dfmappandroid.R;
+import com.example.usuario.dfmappandroid.Utils.Constantes;
+import com.example.usuario.dfmappandroid.Utils.FileDownloader;
+import com.example.usuario.dfmappandroid.Utils.RecyclerItemClickListener;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -39,16 +37,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import com.example.usuario.dfmappandroid.Objects.Movie;
-import com.example.usuario.dfmappandroid.Adapters.MovieAdapter;
-import com.example.usuario.dfmappandroid.R;
-import com.example.usuario.dfmappandroid.Utils.Constantes;
-import com.example.usuario.dfmappandroid.Utils.FileDownloader;
-import com.example.usuario.dfmappandroid.Utils.RecyclerItemClickListener;
 
-import java.util.List;
-
-public class ListMockio extends BaseActivity {
+public class NoticiasActivity extends BaseActivity {
 
     private RecyclerView mList;
 
@@ -61,7 +51,7 @@ public class ListMockio extends BaseActivity {
     //private String url = "http://www.mocky.io/v2/5b7af6c73400005f008ed7b2"; // LisT varios
     private String url = "http://web3.disfrimur.com:8060/wsdl/REST/service.php";
     private String id = "?id=32";
-    static String TAG = "ListMockio";
+    static String TAG = "NoticiasActivity";
 
     private ProgressBar progressBar;
 
@@ -71,10 +61,10 @@ public class ListMockio extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_mockio);
+        setContentView(R.layout.activity_noticias);
 
 
-        getSupportActionBar().setTitle("NÓMINAS");
+        getSupportActionBar().setTitle("NOTICIAS");
 
         context = this;
         mList = (RecyclerView) findViewById(R.id.main_list);
@@ -104,7 +94,7 @@ public class ListMockio extends BaseActivity {
                         // do whatever
                         String archivoPdf = Constantes.getPATH() + movieList.get( position).getDoc();
                         //Toast.makeText(ListMockio.this, "Mensaje: " + movieList.get(position).getDoc(), Toast.LENGTH_SHORT).show();
-                        //new ListMockio.DownloadFile().execute(archivoPdf, Uri.parse(archivoPdf).getLastPathSegment());
+                        //new NoticiasActivity.DownloadFile().execute(archivoPdf, Uri.parse(archivoPdf).getLastPathSegment());
                         Log.i(TAG,"file " + Uri.parse(archivoPdf).getLastPathSegment());
 
 
@@ -234,3 +224,4 @@ public class ListMockio extends BaseActivity {
     }
 
 }
+

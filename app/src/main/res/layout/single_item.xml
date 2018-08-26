@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="10dp">
+    android:clickable="true"
+    android:focusable="true"
+    android:background="@drawable/effect_ripple"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp">
 
 
     <ImageView
@@ -33,7 +37,7 @@
         android:layout_alignLeft="@+id/tv_name"
         android:layout_below="@+id/tv_name"
         android:text="Cargo"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/main_dpto"
@@ -42,23 +46,24 @@
         android:layout_alignLeft="@+id/tv_name"
         android:layout_below="@+id/tv_title"
         android:text="Compañía"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/main_delegacion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Year"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
     <TextView
-        android:id="@+id/main_delegacion"
+        android:id="@+id/year"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="55dp"
         android:gravity="bottom"
         android:paddingLeft="7dp"
-        android:text="2018" />
+        android:text="2018"
+        android:textStyle="bold"/>
 
 
     <ImageButton

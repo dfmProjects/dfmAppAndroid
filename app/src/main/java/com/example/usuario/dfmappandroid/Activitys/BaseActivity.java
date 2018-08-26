@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import com.example.usuario.dfmappandroid.Objects.Noticias;
 import com.example.usuario.dfmappandroid.R;
 
 public class BaseActivity extends AppCompatActivity implements
@@ -119,7 +120,7 @@ public class BaseActivity extends AppCompatActivity implements
                 return true;
 
             case R.id.action_other:
-                startActivity(new Intent(this, OtherActivity.class));
+                startActivity(new Intent(this, Noticias.class));
                 return true;
 
             case R.id.lista_nominas :
