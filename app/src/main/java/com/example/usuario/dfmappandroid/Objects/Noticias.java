@@ -4,15 +4,7 @@ import android.graphics.Bitmap;
 
 public class Noticias {
 
-    public String titulo, body, pie;
-
-    public String getmId() {
-        return mId;
-    }
-
-    public void setmId(String mId) {
-        this.mId = mId;
-    }
+    public String titulo, body, pie, fecha;
 
     private String mId;
 
@@ -22,11 +14,22 @@ public class Noticias {
 
     }
 
-    public Noticias(String titulo, String body, String pie, Integer image) {
+
+    public Noticias(String titulo, String body, String pie, Integer image, String fecha) {
         this.titulo = titulo;
         this.body = body;
         this.pie = pie;
         this.image = image;
+        this.fecha = fecha;
+    }
+
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
     }
 
     public String getTitulo() {

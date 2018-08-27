@@ -12,7 +12,7 @@
     <ImageView
         android:id="@+id/imageNotice"
         android:layout_width="wrap_content"
-        android:layout_height="300dp"
+        android:layout_height="240dp"
         android:src="@drawable/img_example" />
 
     <TextView
@@ -20,17 +20,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="185dp"
         android:text="1000 Lugares donde ir antes de morir"
+        android:textAppearance="?attr/textAppearanceListItem"
         android:textColor="@color/colorWhite"
-        android:textAppearance="?attr/textAppearanceListItem" />
+        android:textSize="15dp"/>
 
     <TextView
         android:id="@+id/fecha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="210dp"
         android:background="@drawable/rounded"
         android:paddingBottom="3dp"
         android:paddingLeft="8dp"
@@ -38,7 +39,7 @@
         android:paddingTop="3dp"
         android:text="Travel"
         android:textColor="@color/colorWhite"
-        android:textStyle="bold" />
+        android:textSize="9dp"/>
 
     <TextView
         android:id="@+id/bodyNotice"
@@ -47,7 +48,7 @@
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="280dp"
         android:ellipsize="end"
         android:maxLines="1"
         android:scrollHorizontally="true"

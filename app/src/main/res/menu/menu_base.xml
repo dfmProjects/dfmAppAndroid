@@ -6,15 +6,22 @@
             android:id="@+id/action_main"
             android:icon="@drawable/ic_house"
             android:title="Main Activity" />
-        <item
-            android:id="@+id/action_other"
-            android:icon="@android:drawable/ic_btn_speak_now"
-            android:title="Other Activity"/>
 
         <item
             android:id="@+id/lista_nominas"
             android:icon="@drawable/ic_nominas"
             android:title="Nóminas"/>
+
+        <item
+            android:id="@+id/lista_noticias"
+            android:icon="@drawable/ic_house"
+            android:title="Noticias"/>
+        <item
+            android:id="@+id/action_other"
+            android:icon="@android:drawable/ic_btn_speak_now"
+            android:title="Other Activity"/>
+
+
 
         <item
             android:id="@+id/action_noHamburger"

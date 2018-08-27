@@ -120,11 +120,15 @@ public class BaseActivity extends AppCompatActivity implements
                 return true;
 
             case R.id.action_other:
-                startActivity(new Intent(this, Noticias.class));
+                startActivity(new Intent(this, OtherActivity.class));
                 return true;
 
             case R.id.lista_nominas :
                 startActivity(new Intent(this, ListMockio.class));
+                return true;
+
+            case R.id.lista_noticias :
+                startActivity(new Intent(this, NoticiasActivity.class));
                 return true;
         }
 

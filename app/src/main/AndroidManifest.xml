@@ -33,10 +33,13 @@
             android:label="Otra Activity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name=".Activitys.NoticiasActivity"
+            android:label="Noticias"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".Activitys.ListMockio"
             android:label="NÓMINAS"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Activitys.NoticiasActivity"></activity>
     </application>
 
 </manifest>

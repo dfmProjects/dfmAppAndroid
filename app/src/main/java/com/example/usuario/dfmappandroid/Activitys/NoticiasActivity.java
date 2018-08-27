@@ -23,7 +23,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.usuario.dfmappandroid.Adapters.MovieAdapter;
+import com.example.usuario.dfmappandroid.Adapters.NoticiasAdapter;
 import com.example.usuario.dfmappandroid.Objects.Movie;
+import com.example.usuario.dfmappandroid.Objects.Noticias;
 import com.example.usuario.dfmappandroid.R;
 import com.example.usuario.dfmappandroid.Utils.Constantes;
 import com.example.usuario.dfmappandroid.Utils.FileDownloader;
@@ -44,14 +46,14 @@ public class NoticiasActivity extends BaseActivity {
 
     private LinearLayoutManager linearLayoutManager;
     private DividerItemDecoration dividerItemDecoration;
-    private List<Movie> movieList;
+    private List<Noticias> movieList;
     private RecyclerView.Adapter adapter;
 
     //private String url = "http://www.mocky.io/v2/5b7aefc334000075008ed7a2";
     //private String url = "http://www.mocky.io/v2/5b7af6c73400005f008ed7b2"; // LisT varios
     private String url = "http://web3.disfrimur.com:8060/wsdl/REST/service.php";
     private String id = "?id=32";
-    static String TAG = "NoticiasActivity";
+    static String TAG = "ListMockio";
 
     private ProgressBar progressBar;
 
@@ -67,10 +69,10 @@ public class NoticiasActivity extends BaseActivity {
         getSupportActionBar().setTitle("NOTICIAS");
 
         context = this;
-        mList = (RecyclerView) findViewById(R.id.main_list);
+        mList = (RecyclerView) findViewById(R.id.main_list_noticias);
 
         movieList = new ArrayList<>();
-        adapter = new MovieAdapter(getApplicationContext(),movieList);
+        adapter = new NoticiasAdapter(getApplicationContext(),movieList);
 
         linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -92,10 +94,10 @@ public class NoticiasActivity extends BaseActivity {
                 new RecyclerItemClickListener(getApplicationContext(), mList ,new RecyclerItemClickListener.OnItemClickListener() {
                     @Override public void onItemClick(View view, int position) {
                         // do whatever
-                        String archivoPdf = Constantes.getPATH() + movieList.get( position).getDoc();
+                        String titulo = Constantes.getPATH() + movieList.get( position).getTitulo();
                         //Toast.makeText(ListMockio.this, "Mensaje: " + movieList.get(position).getDoc(), Toast.LENGTH_SHORT).show();
-                        //new NoticiasActivity.DownloadFile().execute(archivoPdf, Uri.parse(archivoPdf).getLastPathSegment());
-                        Log.i(TAG,"file " + Uri.parse(archivoPdf).getLastPathSegment());
+                        //new ListMockio.DownloadFile().execute(archivoPdf, Uri.parse(archivoPdf).getLastPathSegment());
+                        Log.i(TAG,"file " + Uri.parse(titulo).getLastPathSegment());
 
 
                     }
@@ -115,22 +117,32 @@ public class NoticiasActivity extends BaseActivity {
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
-                for (int i = 0; i < response.length(); i++)
+               /* for (int i = 0; i < response.length(); i++)
                     try {
                         JSONObject jsonObject = response.getJSONObject(i);
 
-                        Movie movie = new Movie();
-                        movie.setEmpresa(jsonObject.getString("empresa"));
-                        movie.setDpto(jsonObject.getString("dpto"));
-                        movie.setDelegacion(jsonObject.getString("delegacion"));
-                        movie.setNombre(jsonObject.getString("nombre"));
-                        movie.setDoc(jsonObject.getString("doc"));
+                        Noticias movie = new Noticias();
+                        movie.setBody(jsonObject.getString("empresa"));
+                        movie.setTitulo(jsonObject.getString("dpto"));
+                        movie.setFecha(jsonObject.getString("delegacion"));
+                        movie.setTitulo(jsonObject.getString("nombre"));
+                        movie.setTitulo(jsonObject.getString("doc"));
 
                         movieList.add(movie);
                     } catch (JSONException e) {
                         e.printStackTrace();
                         progressBar.setVisibility(View.GONE);
-                    }
+
+                        String titulo, String body, String pie, Integer image, String fecha)
+                    } */
+                Noticias movie = new Noticias();
+
+                movieList.add(new Noticias ("1000 lugares que visitar antes de morir",  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.", "Pie noticia", R.drawable.img_example, null));
+
+                movieList.add(new Noticias ("En verano, vaija al invierno", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.", "Pie noticia", R.drawable.img_example2,null));
+
+                movieList.add(new Noticias ("Cabo de Gata, paraíso universal", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.", "Pie noticia", R.drawable.img_example3,null));
+
                 adapter.notifyDataSetChanged();
                 progressBar.setVisibility(View.GONE);
             }

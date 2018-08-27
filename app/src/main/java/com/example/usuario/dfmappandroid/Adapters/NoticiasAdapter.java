@@ -5,8 +5,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.usuario.dfmappandroid.Objects.Movie;
 import com.example.usuario.dfmappandroid.Objects.Noticias;
 import com.example.usuario.dfmappandroid.R;
 
@@ -33,9 +35,10 @@ public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.ViewHo
 
         Noticias noticia = list.get(position);
 
-        holder.textTitulo.setText(noticia.getTitulo());
-        holder.textFoto.setText(noticia.getImage());
-        holder.textBody.setText(noticia.getBody());
+        holder.titleNotice.setText(noticia.getTitulo());
+        holder.fecha.setText("Salud");
+        holder.bodyNotice.setText(String.valueOf(noticia.getBody()));
+        holder.image.setImageResource(noticia.getImage());
 
     }
 
@@ -43,14 +46,16 @@ public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.ViewHo
     public int getItemCount() {return list.size();}
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        public TextView textTitulo, textBody, textFoto;
+        public TextView titleNotice, fecha, bodyNotice;
+        public ImageView image;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
-            textTitulo = (TextView) itemView.findViewById(R.id.titleNotice);
-            textBody = (TextView) itemView.findViewById(R.id.bodyNotice);
-            textFoto = (TextView) itemView.findViewById(R.id.imageNotice);
+            titleNotice = (TextView) itemView.findViewById(R.id.titleNotice);
+            fecha = (TextView) itemView.findViewById(R.id.fecha);
+            bodyNotice = (TextView) itemView.findViewById(R.id.bodyNotice);
+            image = (ImageView) itemView.findViewById(R.id.imageNotice);
         }
 
         @Override
