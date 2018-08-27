@@ -40,6 +40,8 @@
             android:name=".Activitys.ListMockio"
             android:label="NÓMINAS"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Activitys.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

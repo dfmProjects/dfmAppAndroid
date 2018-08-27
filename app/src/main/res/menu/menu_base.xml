@@ -21,8 +21,6 @@
             android:icon="@android:drawable/ic_btn_speak_now"
             android:title="Other Activity"/>
 
-
-
         <item
             android:id="@+id/action_noHamburger"
             android:icon="@android:drawable/ic_btn_speak_now"
@@ -30,8 +28,12 @@
     </group>
     <item
         android:id="@+id/navigation_subheader"
-        android:title="Configración">
+        android:title="Configuración">
         <menu>
+            <item
+                android:id="@+id/action_login"
+                android:icon="@drawable/ic_user"
+                android:title="Login"/>
 
             <item
                 android:id="@+id/ic_share"

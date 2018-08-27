@@ -130,6 +130,10 @@ public class BaseActivity extends AppCompatActivity implements
             case R.id.lista_noticias :
                 startActivity(new Intent(this, NoticiasActivity.class));
                 return true;
+
+            case R.id.action_login :
+                startActivity(new Intent(this, LoginActivity.class));
+                return true;
         }
 
         return super.onOptionsItemSelected(item);
