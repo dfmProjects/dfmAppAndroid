@@ -37,7 +37,7 @@
             android:label="Noticias"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Activitys.ListMockio"
+            android:name=".Activitys.NominasActivity"
             android:label="NÓMINAS"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Activitys.LoginActivity"

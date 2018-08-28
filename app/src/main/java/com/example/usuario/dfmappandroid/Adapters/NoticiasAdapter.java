@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.usuario.dfmappandroid.Objects.Movie;
 import com.example.usuario.dfmappandroid.Objects.Noticias;
 import com.example.usuario.dfmappandroid.R;
 

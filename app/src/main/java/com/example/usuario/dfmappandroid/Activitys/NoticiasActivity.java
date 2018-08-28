@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Environment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -22,9 +21,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.usuario.dfmappandroid.Adapters.MovieAdapter;
 import com.example.usuario.dfmappandroid.Adapters.NoticiasAdapter;
-import com.example.usuario.dfmappandroid.Objects.Movie;
 import com.example.usuario.dfmappandroid.Objects.Noticias;
 import com.example.usuario.dfmappandroid.R;
 import com.example.usuario.dfmappandroid.Utils.Constantes;
@@ -32,8 +29,6 @@ import com.example.usuario.dfmappandroid.Utils.FileDownloader;
 import com.example.usuario.dfmappandroid.Utils.RecyclerItemClickListener;
 
 import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
@@ -53,7 +48,7 @@ public class NoticiasActivity extends BaseActivity {
     //private String url = "http://www.mocky.io/v2/5b7af6c73400005f008ed7b2"; // LisT varios
     private String url = "http://web3.disfrimur.com:8060/wsdl/REST/service.php";
     private String id = "?id=32";
-    static String TAG = "ListMockio";
+    static String TAG = "NominasActivity";
 
     private ProgressBar progressBar;
 
@@ -95,8 +90,8 @@ public class NoticiasActivity extends BaseActivity {
                     @Override public void onItemClick(View view, int position) {
                         // do whatever
                         String titulo = Constantes.getPATH() + movieList.get( position).getTitulo();
-                        //Toast.makeText(ListMockio.this, "Mensaje: " + movieList.get(position).getDoc(), Toast.LENGTH_SHORT).show();
-                        //new ListMockio.DownloadFile().execute(archivoPdf, Uri.parse(archivoPdf).getLastPathSegment());
+                        //Toast.makeText(NominasActivity.this, "Mensaje: " + movieList.get(position).getDoc(), Toast.LENGTH_SHORT).show();
+                        //new NominasActivity.DownloadFile().execute(archivoPdf, Uri.parse(archivoPdf).getLastPathSegment());
                         Log.i(TAG,"file " + Uri.parse(titulo).getLastPathSegment());
 
 

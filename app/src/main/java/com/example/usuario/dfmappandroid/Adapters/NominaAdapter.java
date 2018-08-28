@@ -7,17 +7,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.usuario.dfmappandroid.Objects.Movie;
+import com.example.usuario.dfmappandroid.Objects.Nomina;
 import com.example.usuario.dfmappandroid.R;
 
 import java.util.List;
 
-public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> {
+public class NominaAdapter extends RecyclerView.Adapter<NominaAdapter.ViewHolder> {
 
     private Context context;
-    private List<Movie> list;
+    private List<Nomina> list;
 
-    public MovieAdapter(Context context, List<Movie> list) {
+    public NominaAdapter(Context context, List<Nomina> list) {
         this.context = context;
         this.list = list;
     }
@@ -31,12 +31,11 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        Movie movie = list.get(position);
+        Nomina nom = list.get(position);
 
-        holder.textEmpresa.setText(movie.getEmpresa());
-        holder.textDpto.setText(String.valueOf(movie.getDpto()));
-        holder.textDelegacion.setText(String.valueOf(movie.getDelegacion()));
-        holder.textNombre.setText(String.valueOf(movie.getNombre()));
+        holder.textYear.setText(String.valueOf(nom.getNom_mes()));
+        holder.textDoc.setText(nom.getNom_doc());
+        //holder.textDelegacion.setText(String.valueOf(nom.getDelegacion()));
 
     }
 
@@ -44,15 +43,14 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
     public int getItemCount() {return list.size();}
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        public TextView textEmpresa, textDpto, textDelegacion, textNombre;
+        public TextView textYear, textDoc, imgMes;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
-            textEmpresa = (TextView) itemView.findViewById(R.id.main_empresa);
-            textDpto = (TextView) itemView.findViewById(R.id.main_dpto);
-            textDelegacion = (TextView) itemView.findViewById(R.id.main_delegacion);
-            textNombre = (TextView) itemView.findViewById(R.id.main_nombre);
+            textYear = (TextView) itemView.findViewById(R.id.txtYear);
+            textDoc = (TextView) itemView.findViewById(R.id.txtNombre);
+            imgMes = (TextView) itemView.findViewById(R.id.imgMes);
         }
 
         @Override
