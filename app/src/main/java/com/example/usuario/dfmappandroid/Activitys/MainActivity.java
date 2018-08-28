@@ -42,6 +42,36 @@ public class MainActivity extends BaseActivity {
             Manifest.permission.WRITE_EXTERNAL_STORAGE
     };
 
+    /*
+
+    TABLA PRUEBAS_APP
+
+campo general
+id (pk)
+
+campos para usuario
+u_cod (int)
+u_nombre varchar
+u_empresa varchar
+u_fecha_nac (date)
+
+
+campos para nóminas
+nom_mes (int)
+nom_year (date)
+nom_doc varchar
+
+campos para noticias
+n_id (int)
+n_titulo varchar
+n_body varchar
+n_pie varchar
+n_tag varchar
+n_fecha (date)
+
+
+     */
+
     private static String TAG = "MainActivity";
     Button btnRequest;
     Button btnRequest2;
@@ -62,16 +92,13 @@ public class MainActivity extends BaseActivity {
         //Permisos de la aplicación
         MainActivity.verifyStoragePermissions(this);
 
-
-
-
-        btnRequest = (Button) findViewById(R.id.btnRequest);
-        texto = (TextView) findViewById(R.id.txtTexto);
+        //btnRequest = (Button) findViewById(R.id.btnRequest);
+        //texto = (TextView) findViewById(R.id.txtTexto);
         Cache cache = new DiskBasedCache(getCacheDir(),1024*1024);
         Network network = new BasicNetwork(new HurlStack());
         requestQueue = new RequestQueue(cache,network);
         requestQueue.start();
-
+/*
         btnRequest.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick (View v){
@@ -111,7 +138,7 @@ public class MainActivity extends BaseActivity {
         });
 
 
-
+*/
 
 
     }
