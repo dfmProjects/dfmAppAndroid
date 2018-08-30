@@ -123,6 +123,10 @@ public class BaseActivity extends AppCompatActivity implements
                 startActivity(new Intent(this, OtherActivity.class));
                 return true;
 
+            case R.id.action_nominas:
+                startActivity(new Intent(this, NominasActivity.class));
+                return true;
+
             case R.id.lista_nominas :
                 startActivity(new Intent(this, ListMockio.class));
                 return true;

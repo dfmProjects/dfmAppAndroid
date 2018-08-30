@@ -13,6 +13,11 @@
             android:title="Nóminas"/>
 
         <item
+            android:id="@+id/action_nominas"
+            android:icon="@drawable/ic_nominas"
+            android:title="Nóminas List"/>
+
+        <item
             android:id="@+id/lista_noticias"
             android:icon="@drawable/ic_house"
             android:title="Noticias"/>

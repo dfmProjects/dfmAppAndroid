@@ -2,6 +2,7 @@ package com.example.usuario.dfmappandroid.Activitys;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -12,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,7 +45,7 @@ public class MainActivity extends BaseActivity {
     };
 
     private static String TAG = "MainActivity";
-    Button btnRequest;
+    ImageButton btnNominas;
     Button btnRequest2;
     TextView texto;
     RequestQueue requestQueue;
@@ -62,16 +64,25 @@ public class MainActivity extends BaseActivity {
         //Permisos de la aplicación
         MainActivity.verifyStoragePermissions(this);
 
-
-
-
-        btnRequest = (Button) findViewById(R.id.btnRequest);
-        texto = (TextView) findViewById(R.id.txtTexto);
         Cache cache = new DiskBasedCache(getCacheDir(),1024*1024);
         Network network = new BasicNetwork(new HurlStack());
         requestQueue = new RequestQueue(cache,network);
         requestQueue.start();
 
+        btnNominas = (ImageButton) findViewById(R.id.btnNominas);
+
+
+        btnNominas.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                Intent startActivity = new Intent(getApplicationContext(), NominasActivity.class);
+                startActivity(startActivity);
+            }
+        });
+
+/*
         btnRequest.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick (View v){
@@ -109,7 +120,7 @@ public class MainActivity extends BaseActivity {
                 requestQueue.add(stringRequest);
             }
         });
-
+*/
 
 
 
