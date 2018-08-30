@@ -1,6 +1,7 @@
 package com.example.usuario.dfmappandroid.Adapters;
 
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,9 +34,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
 
         Movie movie = list.get(position);
 
-        holder.textEmpresa.setText(movie.getEmpresa());
-        holder.textDpto.setText(String.valueOf(movie.getDpto()));
-        holder.textDelegacion.setText(String.valueOf(movie.getDelegacion()));
         holder.textNombre.setText(String.valueOf(movie.getNombre()));
 
     }
@@ -44,14 +42,15 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
     public int getItemCount() {return list.size();}
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        public TextView textEmpresa, textDpto, textDelegacion, textNombre;
+        public TextView textEmpresa, textNombre;
+
+        CardView cv;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
-            textEmpresa = (TextView) itemView.findViewById(R.id.main_empresa);
-            textDpto = (TextView) itemView.findViewById(R.id.main_dpto);
-            textDelegacion = (TextView) itemView.findViewById(R.id.main_delegacion);
+            cv = (CardView)itemView.findViewById(R.id.card_view);
+
             textNombre = (TextView) itemView.findViewById(R.id.main_nombre);
         }
 

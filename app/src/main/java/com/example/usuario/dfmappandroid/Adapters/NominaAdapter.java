@@ -2,6 +2,7 @@ package com.example.usuario.dfmappandroid.Adapters;
 
 import android.content.Context;
 import android.net.Uri;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -98,12 +99,14 @@ public class NominaAdapter extends RecyclerView.Adapter<NominaAdapter.ViewHolder
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         public TextView textNomDoc, textDpto, textDelegacion, textNombre;
         public ImageView imgMes;
+        CardView cv;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
+            cv = (CardView)itemView.findViewById(R.id.card_view_nomina);
+
             textNomDoc = (TextView) itemView.findViewById(R.id.txtNomina);
-            textDpto = (TextView) itemView.findViewById(R.id.main_dpto);
             imgMes = (ImageView) itemView.findViewById(R.id.imgMesNomina);
         }
 
