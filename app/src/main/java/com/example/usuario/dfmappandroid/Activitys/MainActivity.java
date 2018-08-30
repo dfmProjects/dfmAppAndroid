@@ -47,7 +47,7 @@ public class MainActivity extends BaseActivity {
     private static String TAG = "MainActivity";
     ImageButton btnNominas;
     Button btnRequest2;
-    TextView texto;
+    TextView textto;
     RequestQueue requestQueue;
 
     private DrawerLayout drawerLayout;
