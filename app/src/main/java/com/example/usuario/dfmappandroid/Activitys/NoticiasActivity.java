@@ -76,11 +76,10 @@ public class NoticiasActivity extends BaseActivity {
 
         linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        dividerItemDecoration = new DividerItemDecoration(mList.getContext(), linearLayoutManager.getOrientation());
+
 
         mList.setHasFixedSize(true);
         mList.setLayoutManager(linearLayoutManager);
-        mList.addItemDecoration(dividerItemDecoration);
         mList.setAdapter(adapter);
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar);

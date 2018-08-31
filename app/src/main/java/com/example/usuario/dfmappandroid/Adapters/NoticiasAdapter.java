@@ -2,6 +2,7 @@ package com.example.usuario.dfmappandroid.Adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +36,8 @@ public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.ViewHo
         Noticias noticia = list.get(position);
 
         holder.titleNotice.setText(noticia.getTitulo());
-        holder.fecha.setText("Salud");
+        holder.fecha.setText("Agosto 2018");
+        holder.tag.setText("Salud");
         holder.bodyNotice.setText(String.valueOf(noticia.getBody()));
         holder.image.setImageResource(noticia.getImage());
 
@@ -45,16 +47,20 @@ public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.ViewHo
     public int getItemCount() {return list.size();}
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        public TextView titleNotice, fecha, bodyNotice;
+        public TextView titleNotice, fecha, bodyNotice, tag;
         public ImageView image;
+        CardView cv;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
             titleNotice = (TextView) itemView.findViewById(R.id.titleNotice);
             fecha = (TextView) itemView.findViewById(R.id.fecha);
+            tag = (TextView) itemView.findViewById(R.id.tag);
             bodyNotice = (TextView) itemView.findViewById(R.id.bodyNotice);
             image = (ImageView) itemView.findViewById(R.id.imageNotice);
+
+            cv = (CardView)itemView.findViewById(R.id.card_view_noticias);
         }
 
         @Override
