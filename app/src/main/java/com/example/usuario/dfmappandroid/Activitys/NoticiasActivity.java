@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.usuario.dfmappandroid.Adapters.MovieAdapter;
@@ -52,8 +53,8 @@ public class NoticiasActivity extends BaseActivity {
     //private String url = "http://www.mocky.io/v2/5b7aefc334000075008ed7a2";
     //private String url = "http://www.mocky.io/v2/5b7af6c73400005f008ed7b2"; // LisT varios
     private String url = "http://web3.disfrimur.com:8060/wsdl/REST/service.php";
-    private String id = "?id=32";
-    static String TAG = "ListMockio";
+    private String id = "?n_id=5";
+    static String TAG = "NoticiasActivity";
 
     private ProgressBar progressBar;
 
@@ -111,6 +112,52 @@ public class NoticiasActivity extends BaseActivity {
 
     }
 
+
+    private void getData() {
+
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url+id, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+
+                Toast.makeText(getApplicationContext(),response.toString(),Toast.LENGTH_SHORT).show();
+
+
+                for (int i = 0; i < response.length(); i++)
+                    try {
+                        JSONObject jsonObject = response.getJSONObject(i);
+
+                        Noticias notice = new Noticias();
+                        notice.setBody(jsonObject.getString("n_id"));
+                        notice.setTitulo(jsonObject.getString("n_titulo"));
+                        notice.setFecha(jsonObject.getString("n_body"));
+                        notice.setPie(jsonObject.getString("n_pie"));
+                        notice.setTag(jsonObject.getString("n_tag"));
+                        notice.setFecha(jsonObject.getString("n_fecha"));
+                        notice.setImagen(jsonObject.getString("nom_doc"));
+
+                        movieList.add(notice);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        progressBar.setVisibility(View.GONE);
+
+                    }
+
+                adapter.notifyDataSetChanged();
+                progressBar.setVisibility(View.GONE);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e(TAG, error.toString());
+                progressBar.setVisibility(View.GONE);
+            }
+        });
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(jsonArrayRequest);
+    }
+
+/*
     private void getData() {
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
@@ -133,7 +180,7 @@ public class NoticiasActivity extends BaseActivity {
                         progressBar.setVisibility(View.GONE);
 
                         String titulo, String body, String pie, Integer image, String fecha)
-                    } */
+                    }
                 Noticias movie = new Noticias();
 
                 movieList.add(new Noticias ("1000 lugares que visitar antes de morir",  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.", "Pie noticia", R.drawable.img_example, null));
@@ -152,9 +199,14 @@ public class NoticiasActivity extends BaseActivity {
                 progressBar.setVisibility(View.GONE);
             }
         });
+
+
+
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(jsonArrayRequest);
     }
+
+    */
 
 
 
