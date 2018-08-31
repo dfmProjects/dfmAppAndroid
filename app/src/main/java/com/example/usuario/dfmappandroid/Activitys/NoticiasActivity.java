@@ -46,18 +46,15 @@ public class NoticiasActivity extends BaseActivity {
     private RecyclerView mList;
 
     private LinearLayoutManager linearLayoutManager;
-    private DividerItemDecoration dividerItemDecoration;
+
     private List<Noticias> movieList;
     private RecyclerView.Adapter adapter;
 
-    //private String url = "http://www.mocky.io/v2/5b7aefc334000075008ed7a2";
-    //private String url = "http://www.mocky.io/v2/5b7af6c73400005f008ed7b2"; // LisT varios
     private String url = "http://web3.disfrimur.com:8060/wsdl/REST/service.php";
-    private String id = "?n_id=5";
+    private String id = "?nom_mes=4"; // Simula un select *
     static String TAG = "NoticiasActivity";
 
     private ProgressBar progressBar;
-
 
     Context context;
 
@@ -78,7 +75,6 @@ public class NoticiasActivity extends BaseActivity {
         linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 
-
         mList.setHasFixedSize(true);
         mList.setLayoutManager(linearLayoutManager);
         mList.setAdapter(adapter);
@@ -88,16 +84,18 @@ public class NoticiasActivity extends BaseActivity {
         // Call to web Service
         getData();
 
-
-
         mList.addOnItemTouchListener(
                 new RecyclerItemClickListener(getApplicationContext(), mList ,new RecyclerItemClickListener.OnItemClickListener() {
                     @Override public void onItemClick(View view, int position) {
-                        // do whatever
-                        String titulo = Constantes.getPATH() + movieList.get( position).getTitulo();
-                        //Toast.makeText(ListMockio.this, "Mensaje: " + movieList.get(position).getDoc(), Toast.LENGTH_SHORT).show();
-                        //new ListMockio.DownloadFile().execute(archivoPdf, Uri.parse(archivoPdf).getLastPathSegment());
-                        Log.i(TAG,"file " + Uri.parse(titulo).getLastPathSegment());
+
+                        // Ver la noticia
+                        if(movieList.get(position).getmId()!= "") {
+                            Intent intent = new Intent(getApplicationContext(), OneNoticia.class);
+                            intent.putExtra(Constantes.getIdNoticia(), movieList.get(position).getmId());
+                            startActivity(intent);
+                        }
+
+
 
 
                     }
@@ -119,21 +117,19 @@ public class NoticiasActivity extends BaseActivity {
             @Override
             public void onResponse(JSONArray response) {
 
-                Toast.makeText(getApplicationContext(),response.toString(),Toast.LENGTH_SHORT).show();
-
-
                 for (int i = 0; i < response.length(); i++)
                     try {
                         JSONObject jsonObject = response.getJSONObject(i);
 
                         Noticias notice = new Noticias();
-                        notice.setBody(jsonObject.getString("n_id"));
                         notice.setTitulo(jsonObject.getString("n_titulo"));
-                        notice.setFecha(jsonObject.getString("n_body"));
+                        notice.setBody(jsonObject.getString("n_body"));
                         notice.setPie(jsonObject.getString("n_pie"));
                         notice.setTag(jsonObject.getString("n_tag"));
                         notice.setFecha(jsonObject.getString("n_fecha"));
                         notice.setImagen(jsonObject.getString("nom_doc"));
+                        notice.setmId(jsonObject.getString("n_id"));
+                        notice.setNom_mes(jsonObject.getInt("nom_mes"));
 
                         movieList.add(notice);
                     } catch (JSONException e) {

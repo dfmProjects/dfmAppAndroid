@@ -5,12 +5,13 @@ import android.graphics.Bitmap;
 public class Noticias {
 
     public String titulo, body, pie, tag, fecha, imagen, mId;
+    public int nom_mes; // variable para pruebas de noticias
 
     public Noticias() {
 
     }
 
-    public Noticias(String titulo, String body, String pie, String tag, String fecha, String imagen, String mId) {
+    public Noticias(String titulo, String body, String pie, String tag, String fecha, String imagen, String mId, int nom_mes) {
         this.titulo = titulo;
         this.body = body;
         this.pie = pie;
@@ -18,6 +19,7 @@ public class Noticias {
         this.fecha = fecha;
         this.imagen = imagen;
         this.mId = mId;
+        this.nom_mes = nom_mes;
     }
 
     public String getTitulo() {
@@ -76,4 +78,11 @@ public class Noticias {
         this.mId = mId;
     }
 
+    public int getNom_mes() {
+        return nom_mes;
+    }
+
+    public void setNom_mes(int nom_mes) {
+        this.nom_mes = nom_mes;
+    }
 }

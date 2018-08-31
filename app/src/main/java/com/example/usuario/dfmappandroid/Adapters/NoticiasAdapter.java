@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -53,12 +54,8 @@ public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.ViewHo
         holder.tag.setText("Salud");
         holder.bodyNotice.setText(String.valueOf(noticia.getBody()));
 
-
-
-        Glide.with(context)
-                .load(Constantes.getPATH() + noticia.getImagen())
-                .into(holder.imagen);
-
+        Glide.with(context).load(Constantes.getPATH() + noticia.getImagen()).
+                into(holder.imagen);
 
     }
 
@@ -67,7 +64,7 @@ public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         public TextView titleNotice, fecha, bodyNotice, tag;
-        final ImageView imagen;
+        public ImageView imagen;
         CardView cv;
 
         public ViewHolder(View itemView) {

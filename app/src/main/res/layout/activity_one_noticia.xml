@@ -11,16 +11,13 @@
     <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/card_view_noticias"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
+        android:layout_height="wrap_content"
         card_view:cardUseCompatPadding="true"
         card_view:cardCornerRadius="4dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/effect_ripple"
             android:padding="5dp">
 
 
@@ -37,7 +34,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="175dp"
-                android:text="1000 Lugares donde ir antes de morir"
                 android:textAppearance="?attr/textAppearanceListItem"
                 android:textColor="@color/colorWhite"
                 android:textSize="15dp" />
@@ -53,10 +49,42 @@
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
                 android:paddingTop="3dp"
-                android:text="Travel"
                 android:textColor="@color/colorWhite"
                 android:textSize="11dp"
-                android:textAllCaps="true"/>
+                android:textAllCaps="true"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/tag2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="200dp"
+                android:background="@drawable/roundedtag2"
+                android:paddingBottom="3dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="3dp"
+                android:textColor="@color/colorWhite"
+                android:textSize="11dp"
+                android:textAllCaps="true"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/tag3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="200dp"
+                android:background="@drawable/roundedtag3"
+                android:paddingBottom="3dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="3dp"
+                android:textColor="@color/colorWhite"
+                android:textSize="11dp"
+                android:textAllCaps="true"
+                android:visibility="gone"/>
 
             <TextView
                 android:id="@+id/fecha"
@@ -71,7 +99,6 @@
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
                 android:paddingTop="3dp"
-                android:text="Junio 2018"
                 android:textSize="11dp"
                 android:textStyle="bold|italic"
                 android:textColor="@color/colorWhite"
@@ -86,14 +113,33 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="280dp"
-                android:ellipsize="end"
-                android:maxLines="1"
                 android:scrollHorizontally="true"
-                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also"
                 android:textAppearance="?attr/textAppearanceListItem" />
+
+            <TextView
+                android:id="@+id/pie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/bodyNotice"
+                android:layout_below="@+id/bodyNotice"
+                android:layout_marginTop="20dp"
+                android:scrollHorizontally="true"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textStyle="bold|italic" />
+
+
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        android:minWidth="50dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>
