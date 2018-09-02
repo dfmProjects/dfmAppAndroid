@@ -1,4 +1,4 @@
-package com.example.usuario.dfmappandroid.Objects;
+package com.example.usuario.dfmappandroid.Pojo;
 
 public class Movie {
 

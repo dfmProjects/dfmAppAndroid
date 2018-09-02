@@ -41,7 +41,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Activitys.NoticiasActivity"
+            android:name=".Activitys.NoticiaActivity"
             android:configChanges="orientation"
             android:label="Noticias"
             android:screenOrientation="portrait"
@@ -58,7 +58,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Activitys.NominasActivity"
+            android:name=".Activitys.NominaActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />

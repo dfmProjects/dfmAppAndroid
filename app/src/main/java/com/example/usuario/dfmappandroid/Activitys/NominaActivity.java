@@ -24,7 +24,7 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 
 import com.example.usuario.dfmappandroid.Adapters.NominaAdapter;
-import com.example.usuario.dfmappandroid.Objects.Nomina;
+import com.example.usuario.dfmappandroid.Pojo.Nomina;
 import com.example.usuario.dfmappandroid.R;
 import com.example.usuario.dfmappandroid.Utils.Constantes;
 import com.example.usuario.dfmappandroid.Utils.FileDownloader;
@@ -39,7 +39,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NominasActivity extends BaseActivity {
+public class NominaActivity extends BaseActivity {
 
 
     private RecyclerView mList;
@@ -51,7 +51,7 @@ public class NominasActivity extends BaseActivity {
 
     private String url = "http://web3.disfrimur.com:8060/wsdl/REST/service.php";
     private String id = "?u_cod=15807";
-    static String TAG = "NominasActivity";
+    static String TAG = "NominaActivity";
 
     private ProgressBar progressBar;
 
@@ -93,7 +93,7 @@ public class NominasActivity extends BaseActivity {
                         // do whatever
                         String archivoPdf = Constantes.getPATH() + nominaList.get( position).getNomDoc();
                         //Toast.makeText(ListMockio.this, "Mensaje: " + movieList.get(position).getDoc(), Toast.LENGTH_SHORT).show();
-                        new NominasActivity.DownloadFile().execute(archivoPdf, Uri.parse(archivoPdf).getLastPathSegment());
+                        new NominaActivity.DownloadFile().execute(archivoPdf, Uri.parse(archivoPdf).getLastPathSegment());
                         Log.i(TAG,"file " + Uri.parse(archivoPdf).getLastPathSegment());
 
 
@@ -111,8 +111,6 @@ public class NominasActivity extends BaseActivity {
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url + id, new Response.Listener<JSONArray>() {
 
-
-
             @Override
             public void onResponse(JSONArray response) {
 
@@ -122,7 +120,8 @@ public class NominasActivity extends BaseActivity {
 
                         Nomina doc = new Nomina();
                         doc.setNomDoc(jsonObject.getString("nom_doc"));
-                        doc.setNomMes(jsonObject.getInt("nom_mes"));
+                        doc.setNomMes(jsonObject.getString("mes"));
+                        doc.setNomYear(jsonObject.getString("year"));
 
                         nominaList.add(doc);
                     } catch (JSONException e) {

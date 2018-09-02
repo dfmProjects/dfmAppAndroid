@@ -1,17 +1,15 @@
-package com.example.usuario.dfmappandroid.Objects;
+package com.example.usuario.dfmappandroid.Pojo;
 
-import android.graphics.Bitmap;
-
-public class Noticias {
+public class Noticia {
 
     public String titulo, body, pie, tag, fecha, imagen, mId;
     public int nom_mes; // variable para pruebas de noticias
 
-    public Noticias() {
+    public Noticia() {
 
     }
 
-    public Noticias(String titulo, String body, String pie, String tag, String fecha, String imagen, String mId, int nom_mes) {
+    public Noticia(String titulo, String body, String pie, String tag, String fecha, String imagen, String mId, int nom_mes) {
         this.titulo = titulo;
         this.body = body;
         this.pie = pie;

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -7,139 +8,112 @@
     android:clickable="true"
     android:focusable="true">
 
-    <!-- A CardView that contains a TextView -->
-    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/card_view_noticias"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        card_view:cardUseCompatPadding="true"
-        card_view:cardCornerRadius="4dp">
+        android:layout_height="match_parent">
 
-        <RelativeLayout
+        <!-- A CardView that contains a TextView -->
+        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view_noticias"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dp">
+            android:visibility="invisible"
+            card_view:cardCornerRadius="4dp"
+            card_view:cardElevation="5dp"
+            card_view:cardUseCompatPadding="true">
 
-
-            <ImageView
-                android:id="@+id/imageNotice"
-                android:layout_width="match_parent"
-                android:layout_height="240dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"/>
-
-            <TextView
-                android:id="@+id/titleNotice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="175dp"
-                android:textAppearance="?attr/textAppearanceListItem"
-                android:textColor="@color/colorWhite"
-                android:textSize="15dp" />
-
-            <TextView
-                android:id="@+id/tag"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="200dp"
-                android:background="@drawable/rounded"
-                android:paddingBottom="3dp"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
-                android:paddingTop="3dp"
-                android:textColor="@color/colorWhite"
-                android:textSize="11dp"
-                android:textAllCaps="true"
-                android:visibility="gone"/>
-
-            <TextView
-                android:id="@+id/tag2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="200dp"
-                android:background="@drawable/roundedtag2"
-                android:paddingBottom="3dp"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
-                android:paddingTop="3dp"
-                android:textColor="@color/colorWhite"
-                android:textSize="11dp"
-                android:textAllCaps="true"
-                android:visibility="gone"/>
-
-            <TextView
-                android:id="@+id/tag3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="200dp"
-                android:background="@drawable/roundedtag3"
-                android:paddingBottom="3dp"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
-                android:paddingTop="3dp"
-                android:textColor="@color/colorWhite"
-                android:textSize="11dp"
-                android:textAllCaps="true"
-                android:visibility="gone"/>
-
-            <TextView
-                android:id="@+id/fecha"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignEnd="@+id/bodyNotice"
-                android:layout_below="@+id/imageNotice"
-                android:layout_alignParentRight="true"
-                android:background="@drawable/rounded_fecha"
-                android:layout_marginTop="3dp"
-                android:paddingBottom="3dp"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
-                android:paddingTop="3dp"
-                android:textSize="11dp"
-                android:textStyle="bold|italic"
-                android:textColor="@color/colorWhite"
-                android:typeface="normal"
-                android:textAllCaps="true"/>
-
-            <TextView
-                android:id="@+id/bodyNotice"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginTop="280dp"
-                android:scrollHorizontally="true"
-                android:textAppearance="?attr/textAppearanceListItem" />
-
-            <TextView
-                android:id="@+id/pie"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignRight="@+id/bodyNotice"
-                android:layout_below="@+id/bodyNotice"
-                android:layout_marginTop="20dp"
-                android:scrollHorizontally="true"
-                android:textAppearance="?attr/textAppearanceListItem"
-                android:textStyle="bold|italic" />
+                android:padding="5dp">
 
 
-        </RelativeLayout>
+                <ImageView
+                    android:id="@+id/imageNotice"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true" />
 
-    </android.support.v7.widget.CardView>
+                <TextView
+                    android:id="@+id/titleNotice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="175dp"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:textColor="@color/colorWhite"
+                    android:shadowColor="@color/colorBlack"
+                    android:textStyle="bold"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="1"
+                    android:textSize="15dp" />
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:minHeight="50dp"
-        android:minWidth="50dp"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:minHeight="75dp"
+                    android:minWidth="75dp" />
+
+                <TextView
+                    android:id="@+id/tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="200dp"
+                    android:background="@drawable/rounded"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="11dp" />
+
+
+                <TextView
+                    android:id="@+id/fecha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/imageNotice"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/imageNotice"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:background="@drawable/rounded_fecha"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="11dp"
+                    android:textStyle="bold|italic"
+                    android:typeface="normal" />
+
+                <TextView
+                    android:id="@+id/bodyNotice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_below="@+id/fecha"
+                    android:textAppearance="?attr/textAppearanceListItem" />
+
+                <TextView
+                    android:id="@+id/pie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@+id/bodyNotice"
+                    android:layout_below="@+id/bodyNotice"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:scrollHorizontally="true"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:textStyle="bold|italic" />
+
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </ScrollView>
+
 
 
 </RelativeLayout>

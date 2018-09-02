@@ -1,17 +1,11 @@
 package com.example.usuario.dfmappandroid.Activitys;
 
-import android.Manifest;
-import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Environment;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -19,10 +13,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.webkit.WebView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -39,14 +30,12 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import com.example.usuario.dfmappandroid.Objects.Movie;
+import com.example.usuario.dfmappandroid.Pojo.Movie;
 import com.example.usuario.dfmappandroid.Adapters.MovieAdapter;
 import com.example.usuario.dfmappandroid.R;
 import com.example.usuario.dfmappandroid.Utils.Constantes;
 import com.example.usuario.dfmappandroid.Utils.FileDownloader;
 import com.example.usuario.dfmappandroid.Utils.RecyclerItemClickListener;
-
-import java.util.List;
 
 public class ListMockio extends BaseActivity {
 

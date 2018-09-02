@@ -9,11 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.example.usuario.dfmappandroid.Objects.Nomina;
+import com.example.usuario.dfmappandroid.Pojo.Nomina;
 import java.util.List;
 
 import com.example.usuario.dfmappandroid.R;
 import com.example.usuario.dfmappandroid.Utils.Constantes;
+import com.example.usuario.dfmappandroid.Utils.Funciones;
 
 public class NominaAdapter extends RecyclerView.Adapter<NominaAdapter.ViewHolder>{
 
@@ -39,57 +40,10 @@ public class NominaAdapter extends RecyclerView.Adapter<NominaAdapter.ViewHolder
         Nomina doc;
         doc = list.get(position);
 
-        // Nombre del archivo
-        String nombreDoc = Constantes.getPATH() + doc.getNomDoc();
-        holder.textNomDoc.setText( Uri.parse(nombreDoc).getLastPathSegment());
-
-        // Icono del mes del documento
-        int mes = doc.getNomMes();
-
-        switch (mes) {
+        holder.txtMes.setText( Funciones.getNombreMes(doc.getNomMes()) );
+        holder.txtYear.setText(doc.getNomYear());
 
 
-            case 1:
-                holder.imgMes.setImageResource(R.mipmap.ic_ene);
-                break;
-            case 2:
-                holder.imgMes.setImageResource(R.mipmap.ic_feb);
-                break;
-             case 3:
-                holder.imgMes.setImageResource(R.mipmap.ic_mar);
-                break;
-            case 4:
-                holder.imgMes.setImageResource(R.mipmap.ic_abr);
-                break;
-            case 5:
-                holder.imgMes.setImageResource(R.mipmap.ic_may);
-                break;
-            case 6:
-                holder.imgMes.setImageResource(R.mipmap.ic_jun);
-                break;
-            case 7:
-                holder.imgMes.setImageResource(R.mipmap.ic_jul);
-                break;
-            case 8:
-                holder.imgMes.setImageResource(R.mipmap.ic_ago);
-                break;
-            case 9:
-                holder.imgMes.setImageResource(R.mipmap.ic_sep);
-                break;
-            case 10:
-                holder.imgMes.setImageResource(R.mipmap.ic_oct);
-                break;
-            case 11:
-                holder.imgMes.setImageResource(R.mipmap.ic_nov);
-                break;
-            case 12:
-                holder.imgMes.setImageResource(R.mipmap.ic_dic);
-                break;
-
-            default:
-                holder.imgMes.setImageResource(R.mipmap.ic_ene);
-
-        }
 
     }
 
@@ -97,17 +51,15 @@ public class NominaAdapter extends RecyclerView.Adapter<NominaAdapter.ViewHolder
     public int getItemCount() {return list.size();}
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        public TextView textNomDoc, textDpto, textDelegacion, textNombre;
-        public ImageView imgMes;
+        public TextView txtMes, txtYear;
         CardView cv;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
             cv = (CardView)itemView.findViewById(R.id.card_view_nomina);
-
-            textNomDoc = (TextView) itemView.findViewById(R.id.txtNomina);
-            imgMes = (ImageView) itemView.findViewById(R.id.imgMesNomina);
+            txtMes = (TextView) itemView.findViewById(R.id.txtMes);
+            txtYear = (TextView) itemView.findViewById(R.id.txtYear);
         }
 
         @Override

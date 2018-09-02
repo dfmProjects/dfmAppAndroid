@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -15,8 +16,9 @@
         android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        card_view:cardUseCompatPadding="true"
-        card_view:cardCornerRadius="4dp">
+        card_view:cardCornerRadius="4dp"
+        card_view:cardElevation="5dp"
+        card_view:cardUseCompatPadding="true">
 
 
         <RelativeLayout
@@ -37,7 +39,7 @@
                 android:src="@mipmap/ic_pdf" />
 
             <TextView
-                android:id="@+id/txtNomina"
+                android:id="@+id/txtMes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/imgMesNomina"
@@ -46,14 +48,12 @@
                 android:textSize="18sp" />
 
 
-
             <TextView
-                android:id="@+id/year"
+                android:id="@+id/txtYear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/imgMesNomina"
-                android:layout_alignStart="@+id/txtNomina"
-                android:text="2018"
+                android:layout_alignStart="@+id/txtMes"
                 android:textSize="14sp"
                 android:textStyle="bold|italic"
                 android:typeface="normal" />
