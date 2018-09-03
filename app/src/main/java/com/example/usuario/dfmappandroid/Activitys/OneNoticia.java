@@ -66,7 +66,7 @@ public class OneNoticia extends BaseActivity {
 
     private void getNoticia(String id) {
 
-        String endPoint = Constantes.getWEBSERVICE() + "?n_id=" + id;
+        String endPoint = Constantes.getAllNoticias()  +  id;
         Log.d(TAG, endPoint);
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(endPoint, new Response.Listener<JSONArray>() {
@@ -79,14 +79,13 @@ public class OneNoticia extends BaseActivity {
                     try {
                         JSONObject jsonObject = response.getJSONObject(i);
 
-                        noticia.setTitulo(jsonObject.getString("n_titulo"));
-                        noticia.setBody(jsonObject.getString("n_body"));
-                        noticia.setPie(jsonObject.getString("n_pie"));
-                        noticia.setTag(jsonObject.getString("n_tag"));
+                        noticia.setTitulo(jsonObject.getString("ntitulo"));
+                        noticia.setBody(jsonObject.getString("body"));
+                        noticia.setPie(jsonObject.getString("pie"));
+                        noticia.setTag(jsonObject.getString("tag"));
                         noticia.setFecha(Funciones.getNombreMes(jsonObject.getString("mes")) + " " +jsonObject.getString("year"));
-                        noticia.setImagen(jsonObject.getString("nom_doc"));
-                        noticia.setmId(jsonObject.getString("n_id"));
-                        noticia.setNom_mes(jsonObject.getInt("nom_mes"));
+                        noticia.setImagen(jsonObject.getString("imagen"));
+                        noticia.setmId(jsonObject.getString("id_noticia"));
 
 
                     } catch (JSONException e) {

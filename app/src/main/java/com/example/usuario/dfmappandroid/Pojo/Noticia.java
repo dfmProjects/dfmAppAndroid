@@ -9,7 +9,7 @@ public class Noticia {
 
     }
 
-    public Noticia(String titulo, String body, String pie, String tag, String fecha, String imagen, String mId, int nom_mes) {
+    public Noticia(String titulo, String body, String pie, String tag, String fecha, String imagen, String mId) {
         this.titulo = titulo;
         this.body = body;
         this.pie = pie;
@@ -17,7 +17,6 @@ public class Noticia {
         this.fecha = fecha;
         this.imagen = imagen;
         this.mId = mId;
-        this.nom_mes = nom_mes;
     }
 
     public String getTitulo() {
@@ -76,11 +75,4 @@ public class Noticia {
         this.mId = mId;
     }
 
-    public int getNom_mes() {
-        return nom_mes;
-    }
-
-    public void setNom_mes(int nom_mes) {
-        this.nom_mes = nom_mes;
-    }
 }

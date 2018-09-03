@@ -38,8 +38,6 @@ public class NoticiaActivity extends BaseActivity {
     private List<Noticia> movieList;
     private RecyclerView.Adapter adapter;
 
-    private String url = "http://web3.disfrimur.com:8060/wsdl/REST/service.php";
-    private String id = "?nom_mes=4"; // Simula un select *
     static String TAG = "NoticiaActivity";
 
     private ProgressBar progressBar;
@@ -79,7 +77,7 @@ public class NoticiaActivity extends BaseActivity {
                         // Ver la noticia
                         if(movieList.get(position).getmId()!= "") {
                             Intent intent = new Intent(getApplicationContext(), OneNoticia.class);
-                            intent.putExtra(Constantes.getIdNoticia(), movieList.get(position).getmId());
+                            intent.putExtra(Constantes.getIdNoticia(), movieList.get(position).getmId() + "/");
                             startActivity(intent);
                         }
 
@@ -101,7 +99,7 @@ public class NoticiaActivity extends BaseActivity {
 
     private void getData() {
 
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url+id, new Response.Listener<JSONArray>() {
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Constantes.getAllNoticias(), new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
 
@@ -111,19 +109,18 @@ public class NoticiaActivity extends BaseActivity {
 
                         Noticia noticia = new Noticia();
 
-                        noticia.setTitulo(jsonObject.getString("n_titulo"));
-                        noticia.setBody(jsonObject.getString("n_body"));
-                        noticia.setPie(jsonObject.getString("n_pie"));
-                        noticia.setTag(jsonObject.getString("n_tag"));
-                        noticia.setFecha(Funciones.getNombreMes(jsonObject.getString("mes")) + " " +jsonObject.getString("year"));
-                        noticia.setImagen(jsonObject.getString("nom_doc"));
-                        noticia.setmId(jsonObject.getString("n_id"));
-                        noticia.setNom_mes(jsonObject.getInt("nom_mes"));
-
+                        noticia.setTitulo(jsonObject.getString("titulo").trim());
+                        noticia.setBody(jsonObject.getString("body").trim());
+                        noticia.setPie(jsonObject.getString("pie").trim());
+                        noticia.setTag(jsonObject.getString("tag").trim());
+                        noticia.setFecha(Funciones.getNombreMes(jsonObject.getString("mes").trim()) + " " +jsonObject.getString("year").trim());
+                        noticia.setImagen(jsonObject.getString("imagen").trim());
+                        noticia.setmId(jsonObject.getString("id_noticia").trim());
                         movieList.add(noticia);
                     } catch (JSONException e) {
                         e.printStackTrace();
                         progressBar.setVisibility(View.GONE);
+
 
                     }
 
