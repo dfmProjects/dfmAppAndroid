@@ -4,18 +4,15 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/action_main"
-            android:icon="@drawable/ic_house"
-            android:title="Main Activity" />
+            android:icon="@drawable/ic_home"
+            android:iconTint="@color/colorDfm"
 
-        <item
-            android:id="@+id/lista_nominas"
-            android:icon="@drawable/ic_nominas"
-            android:title="Nóminas"/>
+            android:title="Inicio" />
 
         <item
             android:id="@+id/action_nominas"
-            android:icon="@drawable/ic_nominas"
-            android:title="Nóminas List"/>
+            android:icon="@drawable/ic_nomina"
+            android:title="Nóminas"/>
 
         <item
             android:id="@+id/lista_noticias"
@@ -23,17 +20,13 @@
             android:title="Noticias"/>
         <item
             android:id="@+id/action_other"
-            android:icon="@android:drawable/ic_btn_speak_now"
-            android:title="Other Activity"/>
+            android:icon="@drawable/ic_account"
+            android:title="Mi perfil"/>
 
-        <item
-            android:id="@+id/action_noHamburger"
-            android:icon="@android:drawable/ic_btn_speak_now"
-            android:title="No Hamburger"/>
     </group>
     <item
         android:id="@+id/navigation_subheader"
-        android:title="Configuración">
+        android:title="Otras">
         <menu>
             <item
                 android:id="@+id/action_login"
@@ -43,7 +36,7 @@
             <item
                 android:id="@+id/ic_share"
                 android:icon="@drawable/ic_settings"
-                android:title="Opcion 2"/>
+                android:title="Configuración"/>
         </menu>
     </item>
 

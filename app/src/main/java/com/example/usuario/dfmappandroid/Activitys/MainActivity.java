@@ -33,7 +33,7 @@ public class MainActivity extends BaseActivity {
     };
 
     private static String TAG = "MainActivity";
-    ImageButton btnNominas;
+    ImageButton btnNominas, btnNoticias;
     Button btnRequest2;
     TextView textto;
     RequestQueue requestQueue;
@@ -48,6 +48,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         //Permisos de la aplicación
         MainActivity.verifyStoragePermissions(this);
@@ -58,6 +59,7 @@ public class MainActivity extends BaseActivity {
         requestQueue.start();
 
         btnNominas = (ImageButton) findViewById(R.id.btnNominas);
+        btnNoticias = (ImageButton) findViewById(R.id.btnNoticias);
 
 
         btnNominas.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +68,17 @@ public class MainActivity extends BaseActivity {
             public void onClick(View view) {
 
                 Intent startActivity = new Intent(getApplicationContext(), NominaActivity.class);
+                startActivity(startActivity);
+            }
+        });
+
+
+        btnNoticias.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                Intent startActivity = new Intent(getApplicationContext(), NoticiaActivity.class);
                 startActivity(startActivity);
             }
         });

@@ -66,7 +66,7 @@ public class OneNoticia extends BaseActivity {
 
     private void getNoticia(String id) {
 
-        String endPoint = Constantes.getAllNoticias()  +  id;
+        String endPoint = Constantes.getAllNoticias()+ id;
         Log.d(TAG, endPoint);
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(endPoint, new Response.Listener<JSONArray>() {
@@ -79,7 +79,7 @@ public class OneNoticia extends BaseActivity {
                     try {
                         JSONObject jsonObject = response.getJSONObject(i);
 
-                        noticia.setTitulo(jsonObject.getString("ntitulo"));
+                        noticia.setTitulo(jsonObject.getString("titulo"));
                         noticia.setBody(jsonObject.getString("body"));
                         noticia.setPie(jsonObject.getString("pie"));
                         noticia.setTag(jsonObject.getString("tag"));
@@ -169,7 +169,7 @@ public class OneNoticia extends BaseActivity {
                 bgShape.setColor(getResources().getColor(R.color.colorLand));
                 break;
             default:
-                bgShape.setColor(Color.RED);
+                bgShape.setColor(getResources().getColor(R.color.colorDfm));
         }
 
     }

@@ -1,6 +1,7 @@
 package com.example.usuario.dfmappandroid.Activitys;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.support.annotation.LayoutRes;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -54,6 +55,9 @@ public class BaseActivity extends AppCompatActivity implements
         }
 
         setUpNavView();
+
+        //navigationView.setItemTextColor(ColorStateList.valueOf(getResources().getColor(R.color.colorDfm)));
+        navigationView.setItemIconTintList(ColorStateList.valueOf(getResources().getColor(R.color.colorDfm)));
     }
 
     /**
@@ -124,10 +128,6 @@ public class BaseActivity extends AppCompatActivity implements
 
             case R.id.action_nominas:
                 startActivity(new Intent(this, NominaActivity.class));
-                return true;
-
-            case R.id.lista_nominas :
-                startActivity(new Intent(this, ListMockio.class));
                 return true;
 
             case R.id.lista_noticias :
