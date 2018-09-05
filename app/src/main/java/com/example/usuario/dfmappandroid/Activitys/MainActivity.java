@@ -33,7 +33,7 @@ public class MainActivity extends BaseActivity {
     };
 
     private static String TAG = "MainActivity";
-    ImageButton btnNominas, btnNoticias;
+    ImageButton btnNominas, btnNoticias, btnPerfil;
     Button btnRequest2;
     TextView textto;
     RequestQueue requestQueue;
@@ -60,6 +60,7 @@ public class MainActivity extends BaseActivity {
 
         btnNominas = (ImageButton) findViewById(R.id.btnNominas);
         btnNoticias = (ImageButton) findViewById(R.id.btnNoticias);
+        btnPerfil = (ImageButton) findViewById(R.id.btnPerfil);
 
 
         btnNominas.setOnClickListener(new View.OnClickListener() {
@@ -83,48 +84,15 @@ public class MainActivity extends BaseActivity {
             }
         });
 
-/*
-        btnRequest.setOnClickListener(new View.OnClickListener(){
+        btnPerfil.setOnClickListener(new View.OnClickListener() {
+
             @Override
-            public void onClick (View v){
-                //Add params
-                endPoint = Constantes.getWebService() + "?NumModelo=209";
+            public void onClick(View view) {
 
-                JsonArrayRequest stringRequest = new JsonArrayRequest(Request.Method.GET, endPoint, null, new Response.Listener<JSONArray>() {
-                    @Override
-                    public void onResponse(JSONArray response) {
-
-                        Log.i("Service", endPoint);
-
-                        for (int i = 0;i < response.length(); i++) {
-                            JSONObject jsonObject = null;
-
-                            try {
-                                jsonObject = response.getJSONObject(i);
-                                texto.setText("Denominacion: " + jsonObject.getString("Denominacion").toString());
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                                Log.i("Error al parsear JSON: ", e.getMessage());
-                            }
-
-                        }
-                        Toast.makeText(getApplicationContext(),"Response :" + response.toString(), Toast.LENGTH_LONG).show();//display the response on screen
-                        //requestQueue.stop();
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.i(TAG,"Error :" + error.toString());
-                    }
-                });
-
-                requestQueue.add(stringRequest);
+                Intent startActivity = new Intent(getApplicationContext(), PerfilActivity.class);
+                startActivity(startActivity);
             }
         });
-*/
-
-
-
 
     }
 

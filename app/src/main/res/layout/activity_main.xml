@@ -60,13 +60,13 @@
 
 
     <ImageButton
-        android:id="@+id/btnNominas2"
+        android:id="@+id/btnPerfil"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_alignTop="@id/txtNominas"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="25dp"
-        android:background="@drawable/ic_user"
+        android:background="@drawable/ic_account"
         android:backgroundTint="@color/colorWhite"
         android:textSize="13sp" />
 
@@ -74,7 +74,7 @@
         android:id="@+id/txtNominas2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/btnNominas2"
+        android:layout_below="@id/btnPerfil"
         android:layout_marginLeft="70dp"
         android:text="MI PERFIL"
         android:textColor="@color/colorWhite"/>
@@ -84,7 +84,7 @@
         android:id="@+id/Noticias2"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_alignTop="@id/btnNominas2"
+        android:layout_alignTop="@id/btnPerfil"
         android:layout_marginLeft="190dp"
         android:background="@drawable/ic_smile"
         android:backgroundTint="@color/colorWhite"

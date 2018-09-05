@@ -32,11 +32,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class OneNoticia extends BaseActivity {
+public class OneNoticiaActicity extends BaseActivity {
 
     private String id_noticia;
     private ProgressBar progressBar;
-    final String TAG = "OneNoticia";
+    final String TAG = "OneNoticiaActicity";
 
     private TextView titleNotice, fecha, bodyNotice, tag, pie;
     private ImageView imagen;

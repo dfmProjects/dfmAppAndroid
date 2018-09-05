@@ -122,8 +122,8 @@ public class BaseActivity extends AppCompatActivity implements
                 startActivity(new Intent(this, MainActivity.class));
                 return true;
 
-            case R.id.action_other:
-                startActivity(new Intent(this, OtherActivity.class));
+            case R.id.action_perfil:
+                startActivity(new Intent(this, PerfilActivity.class));
                 return true;
 
             case R.id.action_nominas:

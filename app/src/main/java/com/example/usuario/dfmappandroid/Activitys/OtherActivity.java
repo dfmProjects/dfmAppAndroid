@@ -17,7 +17,7 @@ public class OtherActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
-            case R.id.action_other:
+            case R.id.action_perfil:
                 return true;
         }
         return super.onOptionsItemSelected(item);

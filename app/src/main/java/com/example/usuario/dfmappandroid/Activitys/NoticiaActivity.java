@@ -76,7 +76,7 @@ public class NoticiaActivity extends BaseActivity {
 
                         // Ver la noticia
                         if(movieList.get(position).getmId()!= "") {
-                            Intent intent = new Intent(getApplicationContext(), OneNoticia.class);
+                            Intent intent = new Intent(getApplicationContext(), OneNoticiaActicity.class);
                             intent.putExtra(Constantes.getIdNoticia(), movieList.get(position).getmId() + "/");
                             startActivity(intent);
                         }
