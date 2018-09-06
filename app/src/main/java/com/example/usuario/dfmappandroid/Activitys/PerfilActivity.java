@@ -6,14 +6,19 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.usuario.dfmappandroid.R;
@@ -25,7 +30,11 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class PerfilActivity extends BaseActivity {
 
+    ImageButton imageBack;
     CircleImageView circleImageView;
+    private NavigationView navigationView;
+    private DrawerLayout fullLayout;
+
     int TAKE_PHOTO_CODE = 0;
     public static int count = 0;
 
@@ -51,12 +60,23 @@ public class PerfilActivity extends BaseActivity {
 
         */
 
+        imageBack = (ImageButton) findViewById(R.id.btnBack);
+        circleImageView = (CircleImageView) findViewById(R.id.circleImage);
 
-        final String dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES) + "/dfmApp/";
+
+
+         final String dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES) + "/dfmApp/";
         File newdir = new File(dir);
         newdir.mkdirs();
 
-        circleImageView = (CircleImageView) findViewById(R.id.circleImage);
+        imageBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                onBackPressed();
+
+            }
+        });
 
 
         circleImageView.setOnClickListener(new View.OnClickListener() {

@@ -99,6 +99,7 @@ public class BaseActivity extends AppCompatActivity implements
     }
 
 
+
     @Override
     public boolean onNavigationItemSelected(MenuItem menuItem) {
         fullLayout.closeDrawer(GravityCompat.START);
