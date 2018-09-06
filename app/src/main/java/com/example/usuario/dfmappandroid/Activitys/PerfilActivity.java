@@ -34,10 +34,15 @@ public class PerfilActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
 
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        //getSupportActionBar().setTitle("MI PERFIL");
+
+
+        //getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+     /*   getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION, WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
- /*
+
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
 
         ActionBar actionBar = getSupportActionBar();
@@ -45,6 +50,7 @@ public class PerfilActivity extends BaseActivity {
         actionBar.setStackedBackgroundDrawable(new ColorDrawable(Color.parseColor("#3b000000")));
 
         */
+
 
         final String dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES) + "/dfmApp/";
         File newdir = new File(dir);
@@ -96,5 +102,10 @@ public class PerfilActivity extends BaseActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected boolean useToolbar() {
+        return false;
     }
 }

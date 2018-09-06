@@ -46,7 +46,9 @@
                 android:shadowDx="2"
                 android:shadowDy="2"
                 android:shadowRadius="1"
-                android:textSize="15dp" />
+                android:textSize="15dp"
+                android:ellipsize="end"
+                android:maxLines="1"/>
 
             <TextView
                 android:id="@+id/tag"

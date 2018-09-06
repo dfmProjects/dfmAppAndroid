@@ -56,7 +56,6 @@ public class BaseActivity extends AppCompatActivity implements
 
         setUpNavView();
 
-        //navigationView.setItemTextColor(ColorStateList.valueOf(getResources().getColor(R.color.colorDfm)));
         navigationView.setItemIconTintList(ColorStateList.valueOf(getResources().getColor(R.color.colorDfm)));
     }
 

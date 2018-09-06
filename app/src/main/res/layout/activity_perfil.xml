@@ -8,131 +8,138 @@
         android:layout_height="match_parent"
         tools:context=".Activitys.PerfilActivity">
 
-    <RelativeLayout
-        android:id="@+id/containerImage"
-        android:layout_width="match_parent"
-        android:layout_height="300dp">
-
         <ImageView
-            android:id="@+id/imgFondo"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:background="@drawable/dfm" />
-
-        <ImageView
-            android:id="@+id/imgFondoS"
-            android:layout_below="@id/imgFondo"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorDfm"/>
-
-
-        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/circleImage"
-            android:layout_width="145dp"
-            android:layout_height="145dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="40dp"
-            android:src="@drawable/avatar"
-            app:civ_border_color="@color/colorWhite"
-            app:civ_border_width="2dp" />
-
-        <TextView
-            android:id="@+id/txtNombre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="María Fernández Pacheco"
-            android:textColor="@color/colorWhite"
-            android:layout_below="@id/circleImage"
-            android:layout_centerHorizontal="true"
-            android:textStyle="bold"
-            android:layout_marginTop="12dp"
-            android:textSize="21sp"/>
-
-        <TextView
-        android:id="@+id/txtLocalidad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="(Alcantarilla)"
-        android:textColor="@color/colorWhite"
-        android:layout_below="@id/txtNombre"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp"
-        android:textSize="17sp"/>
+            android:src="@+android:drawable/menu"/>
 
-        <TextView
-            android:id="@+id/txtProvincia"
+
+        <RelativeLayout
+            android:id="@+id/containerImage"
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+
+            <ImageView
+                android:id="@+id/imgFondo"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/dfm" />
+
+            <ImageView
+                android:id="@+id/imgFondoS"
+                android:layout_below="@id/imgFondo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorDfm"/>
+
+
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/circleImage"
+                android:layout_width="145dp"
+                android:layout_height="145dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/avatar"
+                app:civ_border_color="@color/colorWhite"
+                app:civ_border_width="2dp" />
+
+            <TextView
+                android:id="@+id/txtNombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="María Fernández Pacheco"
+                android:textColor="@color/colorWhite"
+                android:layout_below="@id/circleImage"
+                android:layout_centerHorizontal="true"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"
+                android:textSize="21sp"/>
+
+            <TextView
+            android:id="@+id/txtLocalidad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Murcia"
+            android:text="(Alcantarilla)"
             android:textColor="@color/colorWhite"
-            android:layout_below="@id/txtLocalidad"
+            android:layout_below="@id/txtNombre"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="12dp"
-            android:textSize="15sp"/>
+            android:textSize="17sp"/>
+
+            <TextView
+                android:id="@+id/txtProvincia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Murcia"
+                android:textColor="@color/colorWhite"
+                android:layout_below="@id/txtLocalidad"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:textSize="15sp"/>
 
 
-    </RelativeLayout>
+        </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/iconFecha"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_below="@id/containerImage"
-        android:layout_margin="15dp"
-        android:tint="@color/colorDfm"
-        android:src="@drawable/ic_fecha"/>
+        <ImageView
+            android:id="@+id/iconFecha"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/containerImage"
+            android:layout_margin="15dp"
+            android:tint="@color/colorDfm"
+            android:src="@drawable/ic_fecha"/>
 
-    <TextView
-        android:id="@+id/fechaNacimiento"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_margin="15dp"
-        android:layout_alignParentRight="true"
-        android:text="18 Noviembre 1978"
-        android:layout_below="@id/containerImage"
-        android:textSize="16sp"
-        android:textStyle="bold|italic"/>
+        <TextView
+            android:id="@+id/fechaNacimiento"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="15dp"
+            android:layout_alignParentRight="true"
+            android:text="18 Noviembre 1978"
+            android:layout_below="@id/containerImage"
+            android:textSize="16sp"
+            android:textStyle="bold|italic"/>
 
-    <ImageView
-        android:id="@+id/iconTelefono"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_below="@id/iconFecha"
-        android:layout_margin="15dp"
-        android:tint="@color/colorDfm"
-        android:src="@drawable/ic_phone"/>
+        <ImageView
+            android:id="@+id/iconTelefono"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/iconFecha"
+            android:layout_margin="15dp"
+            android:tint="@color/colorDfm"
+            android:src="@drawable/ic_phone"/>
 
-    <TextView
-        android:id="@+id/telefono"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_margin="15dp"
-        android:layout_alignParentRight="true"
-        android:text="+34 610 554 889"
-        android:layout_below="@id/fechaNacimiento"
-        android:textSize="16sp"
-        android:textStyle="bold|italic"/>
+        <TextView
+            android:id="@+id/telefono"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="15dp"
+            android:layout_alignParentRight="true"
+            android:text="+34 610 554 889"
+            android:layout_below="@id/fechaNacimiento"
+            android:textSize="16sp"
+            android:textStyle="bold|italic"/>
 
-    <ImageView
-        android:id="@+id/iconCorreo"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_below="@id/iconTelefono"
-        android:layout_margin="15dp"
-        android:tint="@color/colorDfm"
-        android:src="@drawable/ic_mail"/>
+        <ImageView
+            android:id="@+id/iconCorreo"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/iconTelefono"
+            android:layout_margin="15dp"
+            android:tint="@color/colorDfm"
+            android:src="@drawable/ic_mail"/>
 
-    <TextView
-        android:id="@+id/correo"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_margin="15dp"
-        android:layout_alignParentRight="true"
-        android:text="micorreo@gmail.com"
-        android:layout_below="@id/telefono"
-        android:textSize="16sp"
-        android:textStyle="bold|italic"/>
+        <TextView
+            android:id="@+id/correo"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="15dp"
+            android:layout_alignParentRight="true"
+            android:text="micorreo@gmail.com"
+            android:layout_below="@id/telefono"
+            android:textSize="16sp"
+            android:textStyle="bold|italic"/>
+
 
 
 </RelativeLayout>

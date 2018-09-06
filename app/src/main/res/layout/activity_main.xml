@@ -9,12 +9,16 @@
     tools:context=".Activitys.MainActivity"
     tools:showIn="@layout/activity_main">
 
-        <ImageView
-            android:id="@+id/logoMain"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="35dp"
-            android:background="@drawable/logo_white" />
+    <ImageView
+        android:id="@+id/logoMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="35dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/logo_white" />
 
     <ImageButton
         android:id="@+id/btnNominas"
